@@ -3,8 +3,8 @@ import {AppProps} from 'next/app';
 // import {wrapper} from '../src/stores';
 import NextSeo from '@components/Seo';
 import {createStore, AnyAction, Store} from 'redux';
-import {createWrapper, Context, HYDRATE} from 'next-redux-wrapper';
-
+import {MakeStore, createWrapper, Context, HYDRATE} from 'next-redux-wrapper';
+import createSagaMiddleware from "redux-saga";
 // import { createStore } from 'redux';
 import { Provider  } from 'react-redux';
 import counterApp from '@reducers/count';
@@ -36,8 +36,15 @@ const counter = (state = counterInitialState, action : AnyAction) => {
         default: return state; 
     } } 
  // create a makeStore function
-const makeStore = (context: Context) => createStore(counter);
+ const makeStore: MakeStore<{}> = () => {
+    const sagaMiddleware = createSagaMiddleware();
+    const middlewares = [sagaMiddleware];
 
+    const store = createStore(rootReducer, {}, bindMiddleware([...middlewares]));
+    sagaMiddleware.run(rootSaga);
+    return store
+}
+    
 // export an assembled wrapper
 export const wrapper = createWrapper<{}>(makeStore, {debug: true});
    

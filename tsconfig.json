@@ -31,6 +31,6 @@
     ],
     "include": [
       "**/*.ts",
-      "**/*.tsx", "pages/api/hello.js", "pages/index.js", "src/action/count.js"]
+      "**/*.tsx", "pages/api/hello.js", "pages/index.js", "src/action/count.js", "src/components/Counter/index.jsx"]
   }
   
