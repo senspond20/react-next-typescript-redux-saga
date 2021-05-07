@@ -53,8 +53,15 @@
 > vscode 재시작
 > npm run dev
 ```
+그러면 next-env.d.ts와 tsconfig.json이 기본설정으로 세팅된다.
 
-그러면 tsconfig.json이 기본설정으로 세팅된다.
++ next-env.d.ts
+
+```json
+/// <reference types="next" />
+/// <reference types="next/types/global" />
+```
++ tsconfig.json
 
 ```json
 {
@@ -109,10 +116,36 @@ import '@public/css/globals.css'
 폴더구조 변경
 > (styles -> public/css )
 
+> robots.txt 추가
 
+> index.js -> index.tsx
+> _app.js -> _app.tsx
 
++ _app.js
 
+```js
+// import '../public/css/globals.css'
+import '@public/css/globals.css'
 
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+````
+
++ _app.tsx
+
+```js
+import { AppProps } from 'next/app'
+import '@public/css/globals.css'
+
+function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+
+export default App
+```
 
 
 

@@ -1,31 +1,32 @@
 {
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths":{
-      "@public/*" : ["public/*"],
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths":{
+        "@public/*" : ["public/*"],
+      },
+      "target": "es5",
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "preserve"
     },
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+    "exclude": [
+      "node_modules"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"]
-}
+    "include": [
+      "**/*.ts",
+      "**/*.tsx", "pages/api/hello.js", "pages/index.js"]
+  }
+  
