@@ -1,10 +1,13 @@
-import { AppProps } from 'next/app'
-import '@public/css/globals.css'
+import React, {FC} from 'react';
+import {AppProps} from 'next/app';
+import {wrapper} from '../src/stores';
+import NextSeo from '@components/Seo';
 
-function App({ Component, pageProps }: AppProps) {
-  console.log(process.env.NODE_ENV)
-  console.log(process.env.REACT_APP_SERVICE_VERSION)
-  return <Component {...pageProps} />
-}
+const WrappedApp: FC<AppProps> = ({Component, pageProps}) => (
+    <>
+        <NextSeo/>
+        <Component {...pageProps} />
+    </>
+);
 
-export default App
+export default wrapper.withRedux(WrappedApp);
