@@ -24,7 +24,8 @@
 }
 ```
 
-+ npm i --dev typescript @types/react @types/node
++ npm i --dev typescript 
++ npm i --save-dev @types/react @types/node
 
 ```json
 {
@@ -37,12 +38,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "@types/node": "^15.0.2",
-    "@types/react": "^17.0.5",
     "next": "10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "typescript": "^4.2.4"
+  },
+  "devDependencies" :{
+    "@types/node": "^15.0.2",
+    "@types/react": "^17.0.5",
   }
 }
 ```
@@ -149,7 +152,7 @@ export default App
 
 
 ```
-npm i --dev dotenv
+npm i --sav-dev dotenv
 ```
 + .env 파일 생성
 
