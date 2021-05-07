@@ -148,4 +148,22 @@ export default App
 ```
 
 
+```
+npm i --dev dotenv
+```
++ .env 파일 생성
 
+```
+REACT_APP_SERVICE_VERSION=1.0.0
+```
+
++ next.config.js
+
+```
+require('dotenv').config();
+module.exports = ({
+    env: {
+        VERSION : process.env.REACT_APP_SERVICE_VERSION,
+    },
+});
+```
