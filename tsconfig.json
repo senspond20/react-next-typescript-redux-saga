@@ -4,7 +4,9 @@
       "paths":{
         "@public/*" : ["public/*"],
         "@components/*" : ["src/components/*"],
-        "@stores/*" : ["src/stores/*"]
+        "@stores/*" : ["src/stores/*"],
+        "@action/*" : ["src/action/*"],
+        "@reducers/*" : ["src/reducers/*"]
       },
       "target": "es5",
       "lib": [
@@ -29,6 +31,6 @@
     ],
     "include": [
       "**/*.ts",
-      "**/*.tsx", "pages/api/hello.js", "pages/index.js"]
+      "**/*.tsx", "pages/api/hello.js", "pages/index.js", "src/action/count.js"]
   }
   
