@@ -161,6 +161,7 @@ REACT_APP_SERVICE_VERSION=1.0.0
 ```
 
 + next.config.js
+(webpack 설정을 여기서 할 수 있다)
 
 ```
 require('dotenv').config();
@@ -169,4 +170,16 @@ module.exports = ({
         VERSION : process.env.REACT_APP_SERVICE_VERSION,
     },
 });
+```
+
+
+```
+npm i --save-dev babel-plugin-styled-components
+```
+
+```js
+{
+    "presets": ["next/babel"],
+    "plugins": ["babel-plugin-styled-components"]
+}
 ```
