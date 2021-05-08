@@ -12,13 +12,12 @@ import theme from "@components/Layouts/Theme";
 
 const Paragraph = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.Paragraph};
-  color: ${({ theme }) => theme.colors.blue};
+  color: ${({ theme }) => theme.colors._blue};
 `;
 const NavbarWrapper = styled.div`
   background-color: ${({theme})  => theme.colors.green_1}
 `;
 const Subtitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSizes.subtitle};
   color: ${({ theme }) => theme.colors.green};
 `;
 export default function Home() {
@@ -42,7 +41,7 @@ export default function Home() {
   return (
       // <ThemeProvider theme={theme}>
       <NavbarWrapper>
-        <Subtitle>ddddddd</Subtitle>
+        <Paragraph>ddddddd</Paragraph>
         <Head>
           <title>Create Next App</title>
           <link rel="icon" href="/favicon.ico" />

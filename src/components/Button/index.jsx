@@ -21,7 +21,7 @@ S.Button = styled.button`
   height: 20rem;
   border: none;
   background-color: #6e827f;
-  color: ${props => props.theme.colors.titleColor}; // 테마 변경 컬러 지정
+  color: ${({theme}) => theme.colors.titleColor}; // 테마 변경 컬러 지정
   border-radius: 8px;
   cursor: pointer;
   

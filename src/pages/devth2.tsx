@@ -5,7 +5,7 @@ import theme from "@components/Layouts/Theme";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  ${({ theme }) => theme.common.flexCenterColumn};
+  ${({ theme }) => theme.flex.flexCenterColumn};
 `;
 
 const Title = styled.h1`
@@ -14,7 +14,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSizes.subtitle};
+  font-size: ${({ theme }) => theme.fontSizes._subtitle};
   color: ${({ theme }) => theme.colors.green};
 `;
 

@@ -9,13 +9,13 @@ import theme from "@components/Layouts/Theme";
 // @ts-ignore
 const WrappedApp: FC<AppProps> = ({Component,pageProps}) => (
     // <Provider store={store}> 
-    <ThemeProvider theme={theme}>
-        {/*<Layout>*/}
+    // <ThemeProvider theme={theme}>
+        <Layout>
         {/*    <Seo/>*/}
             <Component {...pageProps} />
-        {/*</Layout>*/}
+        </Layout>
     // {/* // </Provider> */}
-     </ThemeProvider>
+    //  </ThemeProvider>
 );
 
 export default wrapper.withRedux(WrappedApp);

@@ -5,3 +5,11 @@ export const DECREASE = 'counter/DECREASE'
 export const SEARCH = 'SEARCH';
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
 export const SEARCH_FAIL = 'SEARCH_FAIL';
+
+
+// theme
+export const Theme = {
+    dark :'dark',
+    light: 'light'
+};
+
