@@ -255,6 +255,4 @@ const makeStore = (context: Context) => createStore(reducer);
 export const wrapper = createWrapper<Store<State>>(makeStore, {debug: true});
 ```
 ref : https://github.com/kirill-konshin/next-redux-wrapper
-
-//https://jktech.tistory.com/47
-현재 오류있다 해결해야한다
+ref : https://jktech.tistory.com/47

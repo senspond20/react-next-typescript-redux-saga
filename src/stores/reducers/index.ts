@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import counter from "./count";
-// import search from "./search";
+import search from "./search";
 
 const rootReducer = combineReducers({
     counter: counter,
-    // search: search
+    search: search
 })
 
 export default rootReducer

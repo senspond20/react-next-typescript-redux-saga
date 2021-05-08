@@ -1,68 +1,75 @@
+import Head from 'next/head'
 
-import Image from 'next/image'
-// import styles from '../public/css/Home.module.css'
-// import styles from '../../public/css/Home.module.css';
-import styles from '@public/css/Home.module.css';
+import { useCallback } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import {RootState} from '@stores/reducers'
+import { countUp, countDown } from '@stores/actions/count';
+import { search } from '@stores/actions/search';
 
-function Home(){
+import styles from '@public/css/Home.module.css'
+import styled, {ThemeProvider} from 'styled-components';
+import theme from "@components/Layouts/Theme";
+
+const Paragraph = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.Paragraph};
+  color: ${({ theme }) => theme.colors.blue};
+`;
+const NavbarWrapper = styled.div`
+  background-color: ${({theme})  => theme.colors.green_1}
+`;
+const Subtitle = styled.h2`
+  font-size: ${({ theme }) => theme.fontSizes.subtitle};
+  color: ${({ theme }) => theme.colors.green};
+`;
+export default function Home() {
+  const dispatch = useDispatch();
+  const {value} = useSelector((state: RootState) => state.counter)
+  const searchData = useSelector((state: RootState) => state.search)
+
+  const upEvent = useCallback(() => {
+    dispatch(countUp())
+  }, [])
+
+  const downEvent = useCallback(() => {
+    dispatch(countDown())
+  }, [])
+
+  const searchEvent = useCallback(() => {
+    dispatch(search({test: 'test1'}))
+    //'superman'
+  }, [])
 
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      // <ThemeProvider theme={theme}>
+      <NavbarWrapper>
+        <Subtitle>ddddddd</Subtitle>
+        <Head>
+          <title>Create Next App</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <div className={styles.home}>
+          <div className={styles['counter__text']}>{value}</div>
+          <div className={styles['button__area']}>
+            <button onClick={downEvent}>Down</button>
+            <button onClick={upEvent}>Up</button>
+          </div>
+          <button onClick={searchEvent}>Search</button>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+        {searchData.data && (
+            <div>
+              {searchData.data.map((show:any, index:number) => (
+                  <div key={index}>
+                    <a href={show.url}>{show.name}</a>
+                    <div><Paragraph>점수 : </Paragraph>{show.score}</div>
+                    <div>타입 : {show.type}</div>
+                    <div>언어 : {show.language}</div>
+                  </div>
+              ))}
+            </div>
+        )}
+      </NavbarWrapper>
+      // </ThemeProvider>
   )
 }
 
-export default Home;
