@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from '@stores/reducers'
 import { countUp, countDown } from '@stores/actions/count';
-
-import styles from '../../../public/css/Home.module.css'
+import styles from '@public/css/Home.module.css'
 
 const Home = () => {
     const dispatch = useDispatch();

@@ -1,13 +1,13 @@
 
 import Image from 'next/image'
 // import styles from '../public/css/Home.module.css'
-import styles from '../../public/css/Home.module.css';
-import NextSeo from '@components/Seo';
-export default function Home() {
-  
+// import styles from '../../public/css/Home.module.css';
+import styles from '@public/css/Home.module.css';
+
+function Home(){
+
   return (
     <div className={styles.container}>
-      <NextSeo/>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -64,3 +64,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;

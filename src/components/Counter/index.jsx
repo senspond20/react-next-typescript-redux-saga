@@ -7,7 +7,7 @@ class Counter extends Component {
         console.log(this.props.store)
         return ( 
         <>  
-            {this.props.store !=null 
+            {this.props.store != null
             ? (<div> <h1>Value : {this.props.store.getState().counter.value}</h1> </div> )
             : (<div>Null</div>)
             } 
