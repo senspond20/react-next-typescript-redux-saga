@@ -7,17 +7,35 @@ import theme from "@stores/reducers/theme";
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import persistStore from "redux-persist/es/persistStore";
+import {HYDRATE} from "next-redux-wrapper";
 
 const persistConfig = {
     key: 'root',
     storage,
     whitelist:["theme"]
 };
-const rootReducer = combineReducers({
+// const rootReducer = (combineReducers({
+//     counter: counter,
+//     search: search,
+//     theme : theme
+// });
+const defaultReducer = (combineReducers({
     counter: counter,
     search: search,
     theme : theme
-})
+}));
+
+function rootReducer(state,action){
+    switch (action.type){
+        case HYDRATE:
+            console.log("HYDRATE", action)
+            return action.payload;
+        default :{
+            return defaultReducer(state,action)
+        }
+    }
+}
+
 // const persistedReducer = persistReducer(persistConfig, rootReducer);
 export type RootState = ReturnType<typeof rootReducer>
 // export default rootReducer

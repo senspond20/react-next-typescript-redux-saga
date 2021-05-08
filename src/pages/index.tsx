@@ -9,6 +9,10 @@ import { search } from '@stores/actions/search';
 import styles from '@public/css/Home.module.css'
 import styled, {ThemeProvider} from 'styled-components';
 import {common} from "@components/Layouts/Theme";
+import {wrapper} from "@stores/index";
+import theme from "@stores/reducers/theme";
+import {CounterState} from "@stores/types/state";
+import withReduxSaga from "next-redux-saga";
 
 const Paragraph = styled.p`
   font-size: ${common.fontSizes.paragraph};
@@ -20,7 +24,7 @@ const NavbarWrapper = styled.div`
 const Subtitle = styled.h2`
   color: ${common.colors.green_1};
 `;
-export default function Home() {
+function Home() {
   const dispatch = useDispatch();
   const {value} = useSelector((state: RootState) => state.counter)
   const searchData = useSelector((state: RootState) => state.search)
@@ -71,4 +75,21 @@ export default function Home() {
       // </ThemeProvider>
   )
 }
+Home.getInitialProps = async (context) => {
+    console.log("==========================")
+    console.log(Object.keys(context))
+    // const [ctx, Component] = context;
+    const state = context.store.getState();
+    if(state.counter)
+        console.log('dfdf')
+        console.log(state.counter)
+};
 
+export default Home;
+
+// export const getServerSideProps = wrapper.getServerSideProps((context => {
+//     console.log(Object.keys(context))
+//     context.store.dispatch({
+//         type : countDown
+//     })
+// }))

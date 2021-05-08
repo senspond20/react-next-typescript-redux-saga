@@ -21,5 +21,11 @@ const GlobalStyles = createGlobalStyle`
      button {
         cursor:pointer;
      }
+     button:hover{
+        background: blue;
+     }
+     button:active{
+        background: rgba(0,0,0,0.15);
+     }
  `;
 export default GlobalStyles;

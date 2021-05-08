@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from '@stores/reducers'
 import { countUp, countDown } from '@stores/actions/count';
 import styles from '@public/css/Home.module.css'
+import Home from "../index";
+import {isNumber} from "util";
+// let ssrValue : number = 0;
 
-const Home = () => {
+const Counter = () => {
     const dispatch = useDispatch();
     const {value} = useSelector((state: RootState) => state.counter)
 
@@ -18,7 +21,8 @@ const Home = () => {
 
     return (
         <div className={styles.home}>
-            <div className={styles['counter__text']}>{value}</div>
+            {/*<div>{ssrValue}</div>*/}
+            <div className={styles['counter__text']}>{value} </div>
             <div className={styles['button__area']}>
                 <button onClick={downEvent}>Down</button>
                 <button onClick={upEvent}>Up</button>
@@ -26,5 +30,15 @@ const Home = () => {
         </div>
     )
 }
+Counter.getInitialProps = async (context) => {
+    const state = context.store.getState();
+    let ssrValue = 0;
+    if(state.counter){
+        ssrValue = state.counter.value
+        console.log('eeeee')
+        console.log(ssrValue)
+    }
+    return ssrValue;
+};
 
-export default Home
+export default Counter

@@ -1,5 +1,5 @@
 import React, {ReactNode, useCallback} from "react";
-
+import Link from "next/link";
 import {ThemeProvider} from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@stores/reducers";
@@ -13,6 +13,7 @@ type Props = {
     children?: ReactNode
     title?: string
 };
+
 const Layout =({title, children} : Props)=>{
     const dispatch = useDispatch();
     const state = useSelector((state: RootState) => state.theme)
@@ -23,6 +24,7 @@ const Layout =({title, children} : Props)=>{
     const onDark = useCallback(() => { dispatch(dark())}, [])
     const onLight = useCallback(() =>{ dispatch(light())}, [])
 
+    // @ts-ignore
     return (
     <>
         <Head>
@@ -34,7 +36,12 @@ const Layout =({title, children} : Props)=>{
             <GlobalStyles/>
             <header>
                 <p>현재 모드 : {state.mode}</p>
-                <button onClick={toggleTheme}>테마스위치</button>
+                <div>
+                    <div><Link href={'/'}><a>Home(CSR)</a></Link></div>
+                    <div><Link href={'/counter'}><a>Counter(CSR)</a></Link></div>
+                    <div><a href={'/counter'}>Counter(SSR)</a></div>
+                    <button onClick={toggleTheme}>테마스위치</button>
+                </div>
             </header>
             <main>
                {children}

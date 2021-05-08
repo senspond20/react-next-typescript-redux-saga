@@ -33,6 +33,8 @@
       "**/*.tsx",
       "src/pages/api/hello.js",
       "src/pages/index.js",
-      "src/stores/actions/count", "src/components/Counter/index.jsx"]
+      "src/stores/actions/count",
+      "src/components/Counter/index"
+    ]
   }
   
