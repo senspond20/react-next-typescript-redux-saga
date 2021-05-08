@@ -1,7 +1,7 @@
 
 import Image from 'next/image'
 // import styles from '../public/css/Home.module.css'
-import styles from '@public/css/Home.module.css';
+import styles from '../../public/css/Home.module.css';
 import NextSeo from '@components/Seo';
 export default function Home() {
   

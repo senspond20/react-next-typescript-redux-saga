@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {AppProps} from 'next/app';
-import {wrapper} from '../src/stores';
+import {wrapper} from '@stores/index';
 import NextSeo from '@components/Seo';
 
 const WrappedApp: FC<AppProps> = (
