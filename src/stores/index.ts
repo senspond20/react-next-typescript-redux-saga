@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, Middleware, StoreEnhancer } from "redux"
-import rootReducer from "./reducers";
 import { MakeStore, createWrapper } from "next-redux-wrapper";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas";
+import rootReducer from './reducers'
 
 const bindMiddleware = (middleware: Middleware[]): StoreEnhancer => {
     if (process.env.NODE_ENV !== 'production') {
@@ -17,6 +17,7 @@ const makeStore: MakeStore<{}> = () => {
     const middlewares = [sagaMiddleware];
 
     const store = createStore(rootReducer, {}, bindMiddleware([...middlewares]));
+
     sagaMiddleware.run(rootSaga);
     return store
 }
