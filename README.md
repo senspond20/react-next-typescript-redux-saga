@@ -121,7 +121,7 @@ import '@public/css/globals.css'
 
 > robots.txt 추가
 
-> index.js -> index.tsx
+> index.js -> index.ts
 > _app.js -> _app.tsx
 
 + _app.js
@@ -224,7 +224,7 @@ const WrappedApp: FC<AppProps> = ({Component, pageProps}) => (
 export default wrapper.withRedux(WrappedApp);
 ```
 
-+ stores/index.tsx
++ stores/index.ts
 
 ```js
 

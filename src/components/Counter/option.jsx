@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { setDiff } from '../../action/count'
+import { setDiff } from '@stores/actions/count'
 class Option extends Component { 
     constructor(props) { 
         super(props); 

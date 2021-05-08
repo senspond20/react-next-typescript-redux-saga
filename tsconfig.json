@@ -5,8 +5,6 @@
         "@public/*" : ["public/*"],
         "@components/*" : ["src/components/*"],
         "@stores/*" : ["src/stores/*"],
-        "@action/*" : ["src/action/*"],
-        "@reducers/*" : ["src/reducers/*"]
       },
       "target": "es5",
       "lib": [
@@ -31,6 +29,7 @@
     ],
     "include": [
       "**/*.ts",
-      "**/*.tsx", "pages/api/hello.js", "pages/index.js", "src/action/count.js", "src/components/Counter/index.jsx"]
+      "**/*.tsx", "pages/api/hello.js", "pages/index.js",
+      "src/stores/actions/count", "src/components/Counter/index.jsx"]
   }
   
