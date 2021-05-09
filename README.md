@@ -121,7 +121,7 @@ import '@public/css/globals.css'
 
 > robots.txt 추가
 
-> index.js -> index.tsx
+> index.js -> index.ts
 > _app.js -> _app.tsx
 
 + _app.js
@@ -224,7 +224,7 @@ const WrappedApp: FC<AppProps> = ({Component, pageProps}) => (
 export default wrapper.withRedux(WrappedApp);
 ```
 
-+ stores/index.tsx
++ stores/index.ts
 
 ```js
 
@@ -255,6 +255,5 @@ const makeStore = (context: Context) => createStore(reducer);
 export const wrapper = createWrapper<Store<State>>(makeStore, {debug: true});
 ```
 ref : https://github.com/kirill-konshin/next-redux-wrapper
-
-//https://jktech.tistory.com/47
-현재 오류있다 해결해야한다
+ref : https://jktech.tistory.com/47
+// https://simsimjae.medium.com/next-redux-wrapper%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0-5d0176209d14

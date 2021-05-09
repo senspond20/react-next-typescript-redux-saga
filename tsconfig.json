@@ -1,12 +1,11 @@
 {
     "compilerOptions": {
-      "baseUrl": "./",
+      "baseUrl": "src",
       "paths":{
-        "@public/*" : ["public/*"],
-        "@components/*" : ["src/components/*"],
-        "@stores/*" : ["src/stores/*"],
-        "@action/*" : ["src/action/*"],
-        "@reducers/*" : ["src/reducers/*"]
+        "@public/*" : ["../public/*"],
+        "@components/*" : ["components/*"],
+        "@layouts/*" : ["layouts"],
+        "@stores/*" : ["stores/*"],
       },
       "target": "es5",
       "lib": [
@@ -31,6 +30,11 @@
     ],
     "include": [
       "**/*.ts",
-      "**/*.tsx", "pages/api/hello.js", "pages/index.js", "src/action/count.js", "src/components/Counter/index.jsx"]
+      "**/*.tsx",
+      "src/pages/api/hello.js",
+      "src/pages/index.js",
+      "src/stores/actions/count",
+      "src/components/Counter/index"
+    ]
   }
   
