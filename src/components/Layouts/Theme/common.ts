@@ -71,6 +71,10 @@ const flex = {
     justify-content: center;
     align-items: center;
   `,
+    flexJustify:`
+    display: flex;
+    justify-content: center;
+    `
 };
 const fontSizes = {
     small: calcRem(14),
