@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
 
-    @media(max-width: 1450px){
+    @media(max-width: 1260px){
             .toc{
                 grid-row: 4 / 5;
                 grid-column: 1 / 4;
@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 
 `;
 const GridWrap = styled.section`
-   max-width: 1600px;
+   max-width: 1450px;
    display: grid;
    grid-auto-rows: minmax(100px, auto);
    gap: .5em;
