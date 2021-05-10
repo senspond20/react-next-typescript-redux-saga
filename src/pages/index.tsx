@@ -13,6 +13,7 @@ import {wrapper} from "@stores/index";
 import theme from "@stores/reducers/theme";
 import {CounterState} from "@stores/types/state";
 import withReduxSaga from "next-redux-saga";
+import Counter from './counter';
 
 const Paragraph = styled.p`
   font-size: ${common.fontSizes.paragraph};
@@ -46,11 +47,7 @@ function Home() {
       // <ThemeProvider theme={theme}>
       <NavbarWrapper>
         <Paragraph>ddddddd</Paragraph>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
+        <Counter/>
         <div className={styles.home}>
           <div className={styles['counter__text']}>{value}</div>
           <div className={styles['button__area']}>

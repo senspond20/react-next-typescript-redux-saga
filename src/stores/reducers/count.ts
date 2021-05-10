@@ -3,7 +3,7 @@ import {INCREASE, DECREASE} from '../actions/actionTypes'
 
 const initialState: CounterState = { value: 0 };
 
-export default (state = initialState, action: ActionProps) => {
+const handle = (state = initialState, action: ActionProps) => {
     switch (action.type) {
         case INCREASE:
             return { ...state, value: state.value += 1 }
@@ -14,3 +14,4 @@ export default (state = initialState, action: ActionProps) => {
             return state;
     }
 }
+export default handle;

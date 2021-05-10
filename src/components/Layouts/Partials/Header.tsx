@@ -1,15 +1,42 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
+import {common} from "@components/Layouts/Theme";
+import Link from "next/link";
+import {useDispatch} from "react-redux";
 
-const Nav = styled.div`
-      
+import { dark, light } from "@stores/actions/theme";
+const Nav = styled.ul`
+    ${common.flex.flexCenter}
 `;
+const NavItem = styled.li`
+    margin : ${common.margins.base};
+`;
+type Props ={
+    isLight : boolean,
+    mode : string;
+}
+function handle(prop : Props){
+    const dispatch = useDispatch();
+    const toggleTheme = () =>{ (prop.isLight) ? onDark() : onLight() }
+    const onDark = useCallback(() => { dispatch(dark())}, [])
+    const onLight = useCallback(() =>{ dispatch(light())}, [])
 
-const Header =()=>{
     return(
         <header>
-
-
+            <Nav>
+                <NavItem><Link href={'/'}><a>링크</a></Link></NavItem>
+                <NavItem><Link href={'/counter'}><a>Counter(CSR)</a></Link></NavItem>
+                <NavItem><a href={'/counter'}>Counter(SSR)</a></NavItem>
+                <NavItem>   
+                    <div>
+                        <p>현재 모드 : {prop.mode}</p>
+                        <button onClick={toggleTheme}>Switch</button>
+                    </div>  
+                </NavItem>
+            </Nav>
         </header>
     )
 }
+
+
+export default handle;

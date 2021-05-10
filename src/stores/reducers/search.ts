@@ -6,7 +6,7 @@ const initialState = {
     error: ''
 }
 
-export default (state=initialState, action) => {
+const handle = (state=initialState, action) => {
     switch(action.type){
         case actions.SEARCH:
             console.log(1, {
@@ -39,3 +39,5 @@ export default (state=initialState, action) => {
             return state;
     }
 }
+
+export default handle;

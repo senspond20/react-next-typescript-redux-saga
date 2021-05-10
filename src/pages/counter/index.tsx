@@ -33,6 +33,7 @@ const Counter = () => {
 Counter.getInitialProps = async (context) => {
     const state = context.store.getState();
     let ssrValue = 0;
+    console.log('dfdfdfdd')
     if(state.counter){
         ssrValue = state.counter.value
         console.log('eeeee')
