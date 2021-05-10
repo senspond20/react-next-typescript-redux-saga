@@ -6,7 +6,8 @@ import {useDispatch} from "react-redux";
 
 import { dark, light } from "@stores/actions/theme";
 const Nav = styled.ul`
-    ${common.flex.flexCenter}
+    ${common.flex.flexCenter};
+    
 `;
 const NavItem = styled.li`
     margin : ${common.margins.base};
@@ -24,7 +25,7 @@ function handle(prop : Props){
     return(
         <header>
             <Nav>
-                <NavItem><Link href={'/'}><a>링크</a></Link></NavItem>
+                <NavItem><Link href={'/'}><a>Home</a></Link></NavItem>
                 <NavItem><Link href={'/counter'}><a>Counter(CSR)</a></Link></NavItem>
                 <NavItem><a href={'/counter'}>Counter(SSR)</a></NavItem>
                 <NavItem>   
