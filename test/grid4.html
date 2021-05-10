@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <style>
+
+        @media(max-width: 1200px){
+            #toc{
+                display: none;
+            }
+            #tocfake{display: none;}
+            aside{
+                /* grid-row: 1 / 5; */
+                /* grid-column: 1 / 1; */
+            }
+            section{
+                grid-column: 1 / 3;
+            }
+        }
+
+        @media(max-width: 728px){
+            aside{
+                grid-row: 4 / 5;
+                grid-column: 1 / 4;
+            }
+            section{
+                grid-column: 1 / 4;
+            }
+        }
+        .grid-container{
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-auto-rows: minmax(100px, auto);
+            gap: .5em;
+        }
+        header{
+            background-color: lightpink;
+            border: 1px solid #333;
+            padding: 1em;
+            grid-column: 1 / 4;
+            /* position: sticky; */
+            top:0px;
+        }
+        nav{
+            background-color:paleturquoise;
+            border: 1px solid #333;
+            padding: 1em;
+            grid-column: 1 / 4;
+        }
+        #tocfake{background: #fff;grid-row: 2/2;grid-column: 1 / 1;}
+        #toc{
+            background-color: rgba(0,0,0,0.045);
+            height: 700px;
+            width: 240px;
+            top:80px;
+            border: 1px solid #333;
+            padding: 1em;
+            position: fixed;
+            z-index: 1000;
+            box-shadow: 0 2px 2px 0 #cccccc;
+            /* grid-row: 3/5; */
+             /* grid-column: 1 / 3; */
+        }
+        section{
+            background-color: lightyellow;
+            border: 1px solid #333;
+            padding: 4em;
+        }
+        aside{
+            background-color: limegreen;
+            border: 1px solid #333;
+            padding: 1em;
+            position: sticky;
+            top:0px;
+            /* grid-row: 1/5; */
+            /* grid-column: 3 / 4; */
+        }
+        footer{
+            background-color:wheat;
+            border: 1px solid #333;
+            padding: 1em;
+            grid-column: 1 / 4;
+        }
+    </style>   
+</head>
+<body>
+    <div class="grid-container">
+        <header>header</header>
+        
+        <aside id="toc">Table of Contents</aside>
+        <aside id="tocfake">f</aside>
+        <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore praesentium temporibus labore veniam similique quaerat nihil velit illo architecto. Illo officiis veritatis dolorum! Itaque repellat maxime nobis perspiciatis eum, corporis consequatur quis ut enim veritatis, animi deserunt facilis aspernatur! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error harum qui repellendus corporis dignissimos nostrum culpa temporibus, consequuntur, ratione, perferendis totam veritatis fugiat? Minus quam harum dignissimos dolorum ipsum veritatis non laborum beatae, modi perferendis! Praesentium vitae quia cumque quis quae inventore laudantium itaque quos! Voluptates vero optio temporibus excepturi!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum possimus aliquid ea! Facere laboriosam rem voluptates dolores, aperiam beatae dolore perferendis porro assumenda ullam ratione maiores consequatur dolorum quia accusantium.
+            Laudantium eaque tempora ad quas recusandae expedita. Architecto nam consequatur delectus officiis provident! Eos porro et blanditiis est neque quisquam sunt debitis, ullam hic sed, itaque, fugiat amet laudantium facilis!
+            Assumenda veritatis dolor itaque totam esse aliquam molestias nobis. Excepturi obcaecati incidunt nihil repudiandae, blanditiis eligendi libero earum. Corrupti natus voluptatibus facilis veritatis dignissimos recusandae nulla ea eaque neque est!
+            Culpa voluptate quam quae optio, est dolorum, quis excepturi vel, nisi animi aliquam reiciendis rem expedita molestias accusantium illo obcaecati! Iure saepe architecto aut ab facilis obcaecati sunt quaerat recusandae!
+            Perferendis earum inventore dolores pariatur, ex illum odit nobis deserunt officiis sequi eveniet quaerat hic vero, repudiandae suscipit corporis mollitia ratione illo harum quasi? Deleniti perspiciatis tempora culpa maxime nobis!
+            Alias nesciunt magnam dolores quam, provident voluptatum, ipsam reiciendis esse odit, ipsa pariatur. Enim architecto, qui sint nam quae perferendis, laborum, ipsum dicta necessitatibus inventore quasi pariatur eveniet id ex!
+            Sit nam perferendis vitae atque temporibus rem ducimus! Incidunt, quis iure. Amet reiciendis explicabo repellendus quo vero doloremque porro fuga ullam, numquam eos adipisci atque dolorem delectus modi ratione ad.
+            Quibusdam quae quod alias ipsam mollitia, itaque optio earum magni, natus iste possimus laborum placeat porro voluptatum voluptate, eos voluptatem! Unde temporibus at sit expedita inventore error ut, totam iste!
+            Repudiandae voluptas, tenetur voluptate tempora culpa reiciendis facere eaque labore architecto quidem! Numquam quae natus quasi dolor, aliquam praesentium totam obcaecati vero quas inventore non maxime laborum provident, ad fugit.
+            Perspiciatis voluptatibus ipsum rem culpa modi veniam mollitia eius sed illo magnam expedita eos, enim eligendi earum dolore error ab quisquam adipisci officia? Quia alias facilis aperiam a maiores et!
+            Alias quia illo placeat vero! Fuga dolorum, eos repudiandae nam nobis eveniet error praesentium reiciendis nisi numquam exercitationem officiis rem maxime doloremque assumenda ipsum possimus quas. Provident assumenda fugiat hic?
+            Blanditiis possimus hic officiis ex dicta deleniti ea, quisquam, itaque fugiat sint doloribus et eius? Voluptates nihil laudantium magni non impedit ipsa, quod, deserunt facere architecto distinctio modi voluptatem repellat.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium eos, non vero error libero recusandae molestias corrupti velit ea quam laborum impedit omnis magni blanditiis vel illum. Asperiores, ipsum perferendis.
+            Distinctio perferendis quos hic at, nobis error ex debitis consequuntur maxime! Harum labore totam culpa ipsum velit expedita voluptate aut omnis architecto assumenda voluptatem quis, beatae accusantium nulla pariatur sapiente?
+            Repudiandae aspernatur harum dolores beatae rem incidunt dicta et praesentium esse laborum placeat recusandae provident minus molestiae perspiciatis mollitia dolor, eos quasi deserunt molestias quidem! Ad dignissimos incidunt ex voluptatum?
+            Alias ducimus iste numquam assumenda culpa nam velit quod commodi aliquam in deserunt libero atque cupiditate debitis mollitia consequuntur neque tenetur eos quaerat aut a dolorem, vero nemo. Tempore, modi!
+            Explicabo, eum. Unde odio quidem molestias temporibus saepe, obcaecati tempore, eaque quam doloremque iusto, perferendis ea aut architecto a consequatur debitis dolores! Magni maiores et nulla? Voluptate voluptatibus nam iste.
+            Ullam sequi distinctio magnam amet possimus eveniet ipsum perspiciatis odio delectus ea reiciendis rem minima, cumque laudantium consequuntur corporis explicabo sint! Dignissimos consequatur voluptatibus aperiam voluptatum. Expedita ea amet iusto?
+            Itaque, suscipit esse laborum voluptatibus enim est quibusdam! Repudiandae explicabo velit obcaecati, odio doloremque nostrum et modi aspernatur mollitia dolore esse blanditiis vero eius. Eius beatae eos facilis nulla alias.
+            Rem ex suscipit earum deserunt fugiat fugit sint veniam maxime cum molestiae voluptatem iure nobis totam quis autem eum assumenda quo, perferendis vel cupiditate qui quibusdam dolor nulla. Culpa, cum!
+            Ipsa, accusamus enim. Est accusamus ut adipisci consectetur ullam rem saepe error tempora ipsa veritatis deserunt maxime culpa quas nam, architecto quidem alias eaque iure vero pariatur, labore praesentium consequuntur!
+            Explicabo possimus ratione fugiat laborum aliquam non ad officia eligendi ipsum pariatur neque rem autem nemo incidunt veniam similique, debitis odit perferendis ducimus magni vitae quasi optio consequatur cupiditate? Itaque?
+            Eius itaque esse saepe delectus minus, quasi quas maxime ut? Illum adipisci vero aspernatur excepturi debitis ex error recusandae alias eligendi ad voluptates rerum minus hic, ratione consequatur ipsum tempora.
+            Dicta pariatur ut saepe illum nobis fugit, corporis animi natus repudiandae et! Officia quas labore laboriosam quaerat. Reiciendis eius at deleniti quis maxime libero eos inventore, adipisci iure non consequuntur?
+            Veniam corrupti similique optio doloribus cumque esse facere autem. Animi itaque sapiente earum inventore, quibusdam est aperiam doloribus nulla eos veritatis fuga ex aspernatur fugit necessitatibus ad incidunt quasi aut.
+            Distinctio fuga saepe expedita laudantium modi nemo tenetur debitis quasi, sequi quidem labore ad temporibus blanditiis deserunt autem error odit esse tempora at. Possimus illum quos itaque? Libero, porro eos!
+        </section>
+        <aside id="sidebar">
+            <div style="height: 250px;">
+                Hero
+            </div>
+            <div style="height: 500px;">
+                Category
+            </div>
+            <div>
+                Tag
+            </div>
+            </aside>
+        <nav>Navigation</nav>
+        <footer>footer</footer>
+    </div> 
+</body>
+</html>

@@ -1,6 +1,6 @@
 import React, {ReactNode, useCallback} from "react";
 import Link from "next/link";
-import {ThemeProvider} from "styled-components";
+import styled, {ThemeProvider} from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@stores/reducers";
 import {Theme} from "@stores/actions/actionTypes";
@@ -9,6 +9,17 @@ import GlobalStyles from "@components/Layouts/globalStyle";
 import Head from "next/head";
 import {dark, light} from "@stores/actions/theme";
 import {Header} from "@components/Layouts/Partials"
+
+const Wrapper = styled.div`
+      display: flex;
+    justify-content: center;
+`;
+const Section = styled.section`
+    ${common.flex.flexCenter};
+    width: 100%;
+    background-color:#ffffff;
+`;
+
 type Props = {
     children?: ReactNode
     title?: string
@@ -30,13 +41,21 @@ const Layout =({title, children} : Props)=>{
         </Head>
        <ThemeProvider theme={theme}>
             <GlobalStyles/>
-            <Header isLight ={isLight} mode ={state.mode}/>
-            <main>
-               {children}
-            </main>
-            <footer>
+            <Wrapper>
+                <div>
+                    <Header isLight ={isLight} mode ={state.mode}/>
+                    <Section>
+                        <main>
+                            {children}
+                        </main>
+                        <article>
 
-            </footer>
+                        </article>
+                    </Section>
+                    <footer>ddfd
+                    </footer>
+                </div>
+            </Wrapper>
         </ThemeProvider>
     </>
 

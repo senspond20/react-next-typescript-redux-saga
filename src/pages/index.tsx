@@ -29,7 +29,7 @@ function Home() {
   }
   const searchEvent = useCallback(() => {
     //document.getElementById('SearchKeyword').value}
-    dispatch(search({name: 'text'))
+    dispatch(search({name: 'text'}))
     //'superman'
   }, [])
   // let keyword = document.getElementById('SearchKeyword')

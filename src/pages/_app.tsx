@@ -13,10 +13,10 @@ function WrappedApp ({
 } : AppProps) : JSX.Element{
     return (
         // <Provider store={restore}>
-            <Layout>
-                {/*<Seo/>*/}
+            // <Layout>
+               // {/*<Seo/>*/}
                 <Component {...pageProps} />
-            </Layout>
+            // </Layout>
         // </Provider>
     )
 }
