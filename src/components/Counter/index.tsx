@@ -1,4 +1,4 @@
-import React, {Component, useCallback} from 'react';
+import React, {Component, ReactNode, useCallback} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from '@stores/reducers'
 import { countUp, countDown } from '@stores/actions/count';
@@ -13,7 +13,7 @@ const downEvent = useCallback(() => {
     dispatch(countDown())
 }, [])
 class Home extends Component{
-
+    value: ReactNode;
     static async getInitialProps(context) {
         const store = context.store;
         store.dispatch(useDispatch())
