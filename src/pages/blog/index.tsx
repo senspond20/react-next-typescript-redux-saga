@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const GridWrap = styled.section`
-    max-width: 1450px;
+    max-width: 1400px;
     display: grid;
     grid-auto-rows: minmax(100px, auto);
     gap: .5em;
@@ -61,9 +61,9 @@ const Nav = styled.nav`
 const handle = () =>{
     return (
         <Layout>
-            {/*<Wrapper>*/}
+            <Wrapper>
             {/*    <div>*/}
-            {/* <GridWrap>*/}
+             <GridWrap>
             <TocWrap>
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quia repellat repellendus exercitationem odit animi repudiandae ipsum facilis inventore! Maiores, corrupti officiis. Molestias neque voluptate adipisci aspernatur deserunt, delectus sapiente!</div>
                 <div className="toc">
@@ -184,7 +184,7 @@ const handle = () =>{
 
                 </main>
             </Article>
-            <Aside>
+            <Aside className={'blog-sidebar'}>
                 <Anno>sidebar</Anno>
                 <div className='aside_hero'>
                     <img
@@ -196,7 +196,7 @@ const handle = () =>{
                     <p>오늘도 코딩... </p>
                     <hr />
                 </div>
-                <AsideSticky>
+                <AsideSticky className={"side-sticky"}>
                     <ul className='aside_category'>
                         <h4>Category</h4>
                         <MenuItem link={'/web1'} name={'web1'}/>
@@ -221,9 +221,9 @@ const handle = () =>{
                 <Anno>Navigation</Anno>
                 <p>슬라이드</p>
             </Nav>
-            {/*        </GridWrap>*/}
+                    </GridWrap>
             {/*    </div>*/}
-            {/*</Wrapper>*/}
+            </Wrapper>
         </Layout>
     )
 }

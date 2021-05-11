@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
          color : ${({theme}) => theme.body.fgColor};
          background : ${({theme}) => theme.body.bgColor};
      }
-     
+     //h1{font-size: 26px;}
      button {
         cursor:pointer;
      }

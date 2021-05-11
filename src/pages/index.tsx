@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   border-left: 1px solid #eee;
   border-radius: 5px;
   //grid-column: 1 / 4;
+  width: 100%;
 
 `;
 
