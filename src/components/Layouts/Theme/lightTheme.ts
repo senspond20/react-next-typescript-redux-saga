@@ -1,10 +1,10 @@
 import { DefaultTheme } from 'styled-components';
-import common from "@components/Layouts/Theme/common";
+import commonStyle from "@components/Layouts/commonStyle";
 
 export const lightTheme : DefaultTheme={
     body:{
         fgColor : '#121212',
-        bgColor: '#b8b8b8',
+        bgColor: '#fefefe',
     },
     header : {},
     main : {},

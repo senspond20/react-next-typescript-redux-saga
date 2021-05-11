@@ -62,15 +62,25 @@ const device = {
 const flex = {
     flexCenter: `
     display: flex;
-    justify-contents: center;
+    justify-content: center;
     align-items: center;
   `,
     flexCenterColumn: `
     display: flex;
     flex-direction: column;
-    justify-contents: center;
+    justify-content: center;
     align-items: center;
   `,
+    flexJustify:`
+    display: flex;
+    justify-content: center;
+    `
+};
+const border ={
+    boarderlic :`
+    border: 1px solid #999;
+    border-radius:8px;
+    `
 };
 const fontSizes = {
     small: calcRem(14),
@@ -84,8 +94,9 @@ const fontSizes = {
     _subtitle: calcRem(30),
     paragraph: calcRem(18),
 };
-const common ={
+const commonStyle ={
     flex,
+    border,
     fontSizes,
     colors,
     deviceSizes,
@@ -96,4 +107,4 @@ const common ={
     verticalInterval,
 };
 
-export default common;
+export default commonStyle;

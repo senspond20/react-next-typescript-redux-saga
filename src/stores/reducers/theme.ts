@@ -8,7 +8,7 @@ const initialState = {
     mode : Theme.light
 };
 
-export default (state = initialState, action: ActionProps) => {
+const handle = (state = initialState, action: ActionProps) => {
     switch (action.type) {
         case Theme.dark:
             return { ...state, mode: state.mode = Theme.dark }
@@ -18,3 +18,4 @@ export default (state = initialState, action: ActionProps) => {
             return state;
     }
 }
+export default handle;
