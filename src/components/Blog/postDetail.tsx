@@ -4,6 +4,7 @@ import BlogTemplate from "@components/Blog/blogTemplate"
 import TocWrap from "@components/Blog/tableOfContents"
 import SideBar from "@components/Blog/sideBar"
 import NewComment from "@components/Blog/NewComment";
+import CommentList from "@components/Blog/CommentList";
 
 type Props = {
     children : ReactNode
@@ -16,6 +17,8 @@ const handle = ({children} :  Props) =>{
                     {children}
                 </div>
                 <NewComment/>
+                <CommentList/>
+
             </BlogTemplate>
         </Layout>
     )

@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+const NewCommentWrap = styled.div`
+   padding-top : 15px;
+   border-top: 1px solid #eee;
+`
 const InputWrap = styled.div`
   width: 100%;
   textarea {
     width: 100%;
-    height: 140px;
+    height: 90px;
     border: 1px solid #eee;
     border-radius: 4px;
     resize: none;
@@ -25,8 +29,9 @@ const NewCommentBtn = styled.div`
   background: rgba(15, 20, 184, 0.91);
   color: #cccccc;
   outline: none;
-  width: 100%;
-  height: 30px;
+  width: 20%;
+  float: right;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +46,7 @@ const handle = () =>{
     // 글자수 측정
     
     return(
-        <div>
+        <NewCommentWrap>
             <InputWrap>
                 <textarea placeholder={'★ 새로운 댓글을 달아보세요'}/>
             </InputWrap>
@@ -50,7 +55,7 @@ const handle = () =>{
                     등록
                 </div>
             </NewCommentBtn>
-        </div>
+        </NewCommentWrap>
     )
 }
 export default handle;

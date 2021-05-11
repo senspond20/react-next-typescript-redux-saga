@@ -36,7 +36,7 @@ const Anno = styled.p`
 
 const Hero = styled.div`
   height: 50px;
-
+  float: right;
   .hero-top-nav {
     display: flex;
     padding: 10px 15px;
@@ -54,6 +54,8 @@ const Hero = styled.div`
 
 
 const Header = styled.header`
+  content: '';
+  clear: both;
   padding: 1em;
   grid-column: 1 / 4;
   z-index: 1000;
@@ -66,8 +68,8 @@ const Header = styled.header`
           //a {
           //  color:#fff;
           //}
-  position: sticky;
-  top: 0;
+  //position: sticky;
+  //top: 0;
 `;
 
 
@@ -105,7 +107,7 @@ const ToggleBtn = styled.div`
 const ScrollWrap = styled.div`
   width: 100%;
   position: sticky;
-  top:50px;
+  top:0px;
 `
 const ScrollScore = styled.div`
   //font-size: 2rem;
@@ -151,7 +153,7 @@ const handle =({children} : Props)=>{
         window.addEventListener('scroll', function () {
             const scrollPer = pageYOffset / maxScrollValue;
             if(outputElem && pagingElem){
-                outputElem.innerHTML = (scrollPer * 100).toFixed(2) + '%';
+                outputElem.innerHTML = (scrollPer * 100).toFixed(0) + '%';
 
                 // pagingElem.style.width = scrollPer * 100 + '%';
                 // progress bar
