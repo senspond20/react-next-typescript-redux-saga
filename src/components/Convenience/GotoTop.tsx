@@ -4,7 +4,15 @@ import styled from "styled-components";
  * 최상단으로 이동
  */
 const goToTop = () =>{
-    window.scrollTo(0, 0)
+    // 바로
+    // window.scrollTo(0, 0)
+    
+    // 부드럽게
+    window.scroll({
+        behavior:'smooth',
+        top : 0,
+        left : 0
+    })
 }
 type TopBarProp ={
     link : string, name : string

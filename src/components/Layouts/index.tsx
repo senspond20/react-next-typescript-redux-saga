@@ -1,148 +1,132 @@
-import { commonStyle } from '@components/Layouts/Theme';
+import {commonStyle, darkTheme, lightTheme} from '@components/Layouts/Theme';
 import Link from 'next/link';
 import Image from 'next/image';
-import React, {Children, ReactNode} from 'react';
-import styled from 'styled-components';
+import React, {Children, ReactNode, useCallback, useEffect} from 'react';
+import styled, {ThemeProvider} from 'styled-components';
 import MenuItem, {Item} from "@components/Convenience/MenuItem";
 import GotoTop from "@components/Convenience/GotoTop";
 import MenuList from "@components/Convenience/MenuList";
+import GlobalStyles from "@components/Layouts/globalStyle";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "@stores/reducers";
+import {dark, light} from "@stores/actions/theme";
+import {Theme} from "@stores/actions/actionTypes";
+import TextLogo from "@components/Icon/TextLogo";
 
 const Wrapper = styled.div`
   width: 100%;
-  @media(max-width: 1450px){
-    .headerMenu{
-      //display:block;
-    }
-    .toc{
-      grid-row: 4 / 5;
-      grid-column: 1 / 4;
-    }
-    //.home-toc{
-    //  display: none;
-    //}
-    .blog-main{
-      grid-column: 1 / 4;
-    }
-    /* aside{
-        grid-row: 3 / 5;
-        grid-column: 1 / 4;
-    } */
-  }
-  @media(max-width: 800px){
-    //.top-hero{display: none}
-    .home-card-wrap{
-      grid-column: 1 / 4;
-    }
-    .aside_hero{
-      display: none;
-    }
-    .blog-sidebar{
-      background: #fff;
-      position: fixed;
-      width: 400px;
-      height: 1600px;
-      top:-70px;
-      border-left: 1px solid red;
-      right: 0;
-      bottom: 0;
-      opacity: 1;
-      .side-sticky{
-        position: relative;
-      }
-    }
-  }
 `;
-
-const ToggleSideBar = ()=>{
-    document.querySelector('blog-sidebar')?.classList.add('');
-}
 
 const GridWrap = styled.section`
   max-width: 1450px;
   margin:0 auto;
   gap: .5em;
 `;
+
+
+const ToggleSideBar = ()=>{
+    document.querySelector('blog-sidebar')?.classList.add('');
+}
+
+
+const Anno = styled.p`
+  color: #4ba1c3;
+`
+
+
+const Hero = styled.div`
+  height: 50px;
+
+  .hero-top-nav {
+    display: flex;
+    padding: 10px 15px;
+  }
+
+  .hero-top-nav li {
+    list-style: none;
+    margin: 0 15px 0 0;
+  }
+
+  a:hover {
+    color: #468aac;
+  }
+`;
+
+
 const Header = styled.header`
   padding: 1em;
   grid-column: 1 / 4;
-  z-index:1000;
+  z-index: 1000;
   width: auto;
-  height:30px;
+  height: 50px;
   /* background-color: #fefefe; */
-  background-color: #0f3d57;
-  ${commonStyle.flex.flexCenter}
-      /* ${commonStyle.border.boarderlic} */
-  a {
-    color:#fff;
-  }
-  position:sticky;
-  top:0;
+  background-color: #f3f3f8;
+  border-bottom: 1px solid #eee;
+  // ${commonStyle.flex.flexCenter} 
+          //a {
+          //  color:#fff;
+          //}
+  position: sticky;
+  top: 0;
 `;
 
 
 const Footer = styled.footer`
   padding: 1em;
   //width: 1450px;
+  background: #333;
+  border-top: 1px solid #eee;
   grid-column: 1 / 4;
-  ${commonStyle.border.boarderlic};
-`;
-const FooterItem = styled.footer`
-  //width:1400px; 
-
-  /* background-color:red; */
   text-align:center;
-  ${commonStyle.flex.flexCenter};
+    // ${commonStyle.border.boarderlic};
+`;
+const FooterHighlight = styled.footer`
+  //width:1400px; 
+  border-bottom: 1px solid #eeeeee;
+  /* background-color:red; */
+  //text-align:center;
+//  ${commonStyle.flex.flexCenter};
 `
 
 
-const Anno = styled.p`
-  color: #4ba1c3;
-`
-/**
- * ul
- */
-const HeaderMenu = styled.ul`
-  ${commonStyle.flex.flexJustify}
-    /* display:flex; */
-  background-color: #0f3d57;
-    /*${commonStyle.border.boarderlic} */
-  color: #eee;
-  padding:10px 15px;
-  li {
-    list-style:none;
-    margin: 0 15px 0 0;
-  }
-`;
-const HeaderMenu1 = styled.ul`
-  
-`
-
-/**
- * li
- */
-
-const ThemeSwitchWrap = styled.div`
-    float:right;
-`;
 
 
-const Hero = styled.div`
-  height: 50px;
-  
-  .hero-top-nav{
-    display: flex;
-    padding:10px 15px;
-  }
-
-  .hero-top-nav li {
-    list-style:none;
-    margin: 0 15px 0 0;
-  }
-`;
 
 const Content = styled.div`
   min-height: 980px;
+  
 `
+
+const ToggleBtn = styled.div`
+  float: right;
+  cursor: pointer;
+`;
+
+const ScrollWrap = styled.div`
+  width: 100%;
+  position: sticky;
+  top:50px;
+`
+const ScrollScore = styled.div`
+  //font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #333333;
+  //background: rgba(0, 0, 0, 0.4);
+
+`
+const ScrollPaging = styled.div`
+  height: 5px;
+  width: 0;
+  opacity: 0.87;
+  background: rgb(54, 36, 219);
+
+`
+/**
+ *
+ */
 type Props = {
     children?: ReactNode
     title?: string
@@ -156,7 +140,43 @@ const navList : Item[]=
     ];
 
 const handle =({children} : Props)=>{
+    useEffect(() => {
+        let maxScrollValue = 0;
+        const pagingElem = document.querySelector('.paging');
+        const outputElem = document.querySelector('.output');
+
+        function resizeHandler() {
+            maxScrollValue = document.body.offsetHeight - window.innerHeight;
+        }
+        window.addEventListener('scroll', function () {
+            const scrollPer = pageYOffset / maxScrollValue;
+            if(outputElem && pagingElem){
+                outputElem.innerHTML = (scrollPer * 100).toFixed(2) + '%';
+
+                pagingElem.style.width = scrollPer * 100 + '%';
+                // progress bar
+                // pagingElem.style.width = scrollPer * 100 + '%';
+            }
+
+        });
+
+        window.addEventListener('resize', resizeHandler);
+        resizeHandler();
+    },[]);
+
+    const dispatch = useDispatch();
+    const state = useSelector((state: RootState) => state.theme)
+
+    let isLight = state.mode === Theme.light;
+    const theme = (isLight) ? lightTheme : darkTheme;
+
+    const toggleTheme = () =>{ (isLight) ? onDark() : onLight() }
+    const onDark = useCallback(() => { dispatch(dark())}, [])
+    const onLight = useCallback(() =>{ dispatch(light())}, [])
+
     return(
+     <ThemeProvider theme={theme}>
+        <GlobalStyles />
          <Wrapper>
             <GridWrap>
                 <Hero className={"top-hero"}>
@@ -164,20 +184,34 @@ const handle =({children} : Props)=>{
                     <MenuList className={"hero-top-nav"} list={navList}/>
                 </Hero>
                 <Header>
-                    {/* <Anno>header</Anno> */}
-                    {/*<div>*/}
-                    {/*    <input type={'text'} placeholder={'검색어를 입력해주세요'}></input>*/}
-                    {/*    <HeaderMenu className='headerMenu'>*/}
-                    {/*        <MenuItem link={'/'} name={'Home'}/>*/}
-                    {/*        <MenuItem link={'/blog'} name={'Blog'}/>*/}
-                    {/*        <MenuItem link={'/service'} name={'Service'}/>*/}
-                    {/*        <MenuItem link={'/about'} name={'About'}/>*/}
-                    {/*    </HeaderMenu>*/}
-                    {/*    <ThemeSwitchWrap>테마스위치 Light/Dark</ThemeSwitchWrap>*/}
-                    {/*    <button onClick={ToggleSideBar}>Toggle</button>*/}
-                    {/*</div>*/}
+                    <div>
+                        <ToggleBtn onClick={ToggleSideBar}>Toggle</ToggleBtn>
 
+
+                        <button onClick={toggleTheme}>테마스위치</button>
+
+
+                        {/* <Anno>header</Anno> */}
+                        {/*<div>*/}
+                        {/*    <input type={'text'} placeholder={'검색어를 입력해주세요'}></input>*/}
+                        {/*    <HeaderMenu className='headerMenu'>*/}
+                        {/*        <MenuItem link={'/'} name={'Home'}/>*/}
+                        {/*        <MenuItem link={'/blog'} name={'Blog'}/>*/}
+                        {/*        <MenuItem link={'/service'} name={'Service'}/>*/}
+                        {/*        <MenuItem link={'/about'} name={'About'}/>*/}
+                        {/*    </HeaderMenu>*/}
+                        {/*    <ThemeSwitchWrap>테마스위치 Light/Dark</ThemeSwitchWrap>*/}
+                        {/*    <button onClick={ToggleSideBar}>Toggle</button>*/}
+                        {/*</div>*/}
+
+
+                    </div>
                 </Header>
+                <ScrollWrap>
+                    <ScrollScore className="output">0</ScrollScore>
+                    <ScrollPaging className="paging"></ScrollPaging>
+                </ScrollWrap>
+
                 <section>
                     {/*<ContentWrapper>*/}
                     {/*    <div>*/}
@@ -188,16 +222,23 @@ const handle =({children} : Props)=>{
                     {/*</ContentWrapper>*/}
                 </section>
                 <Footer>
-                    <Anno>footer</Anno>
-                    <FooterItem>
-                        <div>
-                            <address>dfdfd.com</address>
-                        </div>
-                    </FooterItem>
+                    {/*<Anno>footer</Anno>*/}
+                    <FooterHighlight>
+                        {/*<div>*/}
+                            <TextLogo text={'Just Do It!'}/>
+
+                            {/*<address>dfdfd.com</address>*/}
+                        {/*</div>*/}
+                    </FooterHighlight>
+                    <div>
+                        <p style={{color:'red'}}>footer</p>
+                    </div>
+
                 </Footer>
                 <GotoTop />
             </GridWrap>
         </Wrapper>
+     </ThemeProvider>
     )
 }
 export default handle;
