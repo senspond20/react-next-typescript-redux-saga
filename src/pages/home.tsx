@@ -169,7 +169,7 @@ const handle =()=>{
 
             </Header>
                 <TocWrap>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quia repellat repellendus exercitationem odit animi repudiandae ipsum facilis inventore! Maiores, corrupti officiis. Molestias neque voluptate adipisci aspernatur deserunt, delectus sapiente!</div>                
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quia repellat repellendus exercitationem odit animi repudiandae ipsum facilis inventore! Maiores, corrupti officiis. Molestias neque voluptate adipisci aspernatur deserunt, delectus sapiente!</div>
                     <div className="toc">
                         <Anno>Table of Centens</Anno>
                         <ul>
@@ -182,7 +182,7 @@ const handle =()=>{
                         </ul>
 
                     </div>
-  
+
                 </TocWrap>
                 <Section>
                     <main>

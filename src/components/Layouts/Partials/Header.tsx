@@ -1,16 +1,16 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
-import {common} from "@components/Layouts/Theme";
+import {commonStyle} from "@components/Layouts/Theme";
 import Link from "next/link";
 import {useDispatch} from "react-redux";
 
 import { dark, light } from "@stores/actions/theme";
 const Nav = styled.ul`
-    ${common.flex.flexCenter};
+    ${commonStyle.flex.flexCenter};
     
 `;
 const NavItem = styled.li`
-    margin : ${common.margins.base};
+    margin : ${commonStyle.margins.base};
 `;
 type Props ={
     isLight : boolean,

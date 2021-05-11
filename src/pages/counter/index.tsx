@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from '@stores/reducers'
 import { countUp, countDown } from '@stores/actions/count';
 import styles from '@public/css/Home.module.css'
-import Home from "../index";
+import Home from "../test";
 import {isNumber} from "util";
 // let ssrValue : number = 0;
 

@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-import common from "@components/Layouts/Theme/common";
+import commonStyle from "@components/Layouts/commonStyle";
 
 export const darkTheme : DefaultTheme ={
     body: {

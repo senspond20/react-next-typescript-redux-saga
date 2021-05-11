@@ -1,6 +1,6 @@
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
-import {common} from "@components/Layouts/Theme";
+import {commonStyle} from "@components/Layouts/Theme";
 const calcRem = (size: number) => `${size / 16}rem`;
 
 const GlobalStyles = createGlobalStyle`
@@ -10,14 +10,15 @@ const GlobalStyles = createGlobalStyle`
          color:inherit;
      }
      *{
-         box-sizing: boerder-box;
+         box-sizing: border-box;
      }
      body{
          font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-         font-size : ${common.fontSizes.small};
+         font-size : ${commonStyle.fontSizes.small};
          color : ${({theme}) => theme.body.fgColor};
          background : ${({theme}) => theme.body.bgColor};
      }
+     
      button {
         cursor:pointer;
      }
