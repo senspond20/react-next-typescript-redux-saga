@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
 
-    @media(max-width: 1260px){
+    @media(max-width: 1450px){
             .toc{
                 grid-row: 4 / 5;
                 grid-column: 1 / 4;
@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 
 `;
 const GridWrap = styled.section`
-   max-width: 1450px;
+   max-width: 1600px;
    display: grid;
    grid-auto-rows: minmax(100px, auto);
    gap: .5em;
@@ -169,7 +169,7 @@ const handle =()=>{
 
             </Header>
                 <TocWrap>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quia repellat repellendus exercitationem odit animi repudiandae ipsum facilis inventore! Maiores, corrupti officiis. Molestias neque voluptate adipisci aspernatur deserunt, delectus sapiente!</div>                
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quia repellat repellendus exercitationem odit animi repudiandae ipsum facilis inventore! Maiores, corrupti officiis. Molestias neque voluptate adipisci aspernatur deserunt, delectus sapiente!</div>
                     <div className="toc">
                         <Anno>Table of Centens</Anno>
                         <ul>
@@ -182,7 +182,7 @@ const handle =()=>{
                         </ul>
 
                     </div>
-  
+
                 </TocWrap>
                 <Section>
                     <main>

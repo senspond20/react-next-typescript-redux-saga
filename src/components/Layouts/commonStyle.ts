@@ -76,6 +76,12 @@ const flex = {
     justify-content: center;
     `
 };
+const border ={
+    boarderlic :`
+    border: 1px solid #999;
+    border-radius:8px;
+    `
+};
 const fontSizes = {
     small: calcRem(14),
     base: calcRem(16),
@@ -88,8 +94,9 @@ const fontSizes = {
     _subtitle: calcRem(30),
     paragraph: calcRem(18),
 };
-const common ={
+const commonStyle ={
     flex,
+    border,
     fontSizes,
     colors,
     deviceSizes,
@@ -100,4 +107,4 @@ const common ={
     verticalInterval,
 };
 
-export default common;
+export default commonStyle;
