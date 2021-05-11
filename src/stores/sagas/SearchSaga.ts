@@ -3,10 +3,11 @@ import {SEARCH} from '@stores/actions/actionTypes'
 import * as actions from "@stores/actions/search";
 import axios from "axios";
 
-function searchAPI(name) {
+function searchAPI(name : string) {
     return axios.get(`https://api.tvmaze.com/search/shows?q=${name}`)
 }
 
+// @ts-ignore
 function* fetchSearchSaga(action) {
     try {
         const name = action.payload.name

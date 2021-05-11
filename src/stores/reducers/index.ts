@@ -24,7 +24,7 @@ const defaultReducer = (combineReducers({
     search: search,
     theme : theme
 }));
-
+// @ts-ignore
 function rootReducer(state,action){
     switch (action.type){
         case HYDRATE:

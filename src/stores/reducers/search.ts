@@ -6,6 +6,7 @@ const initialState = {
     error: ''
 }
 
+// @ts-ignore
 const handle = (state=initialState, action) => {
     switch(action.type){
         case actions.SEARCH:

@@ -30,16 +30,16 @@ const Counter = () => {
         </div>
     )
 }
-Counter.getInitialProps = async (context) => {
-    const state = context.store.getState();
-    let ssrValue = 0;
-    console.log('dfdfdfdd')
-    if(state.counter){
-        ssrValue = state.counter.value
-        console.log('eeeee')
-        console.log(ssrValue)
-    }
-    return ssrValue;
-};
+// Counter.getInitialProps = async (context) => {
+//     const state = context.store.getState();
+//     let ssrValue = 0;
+//     console.log('dfdfdfdd')
+//     if(state.counter){
+//         ssrValue = state.counter.value
+//         console.log('eeeee')
+//         console.log(ssrValue)
+//     }
+//     return ssrValue;
+// };
 
 export default Counter

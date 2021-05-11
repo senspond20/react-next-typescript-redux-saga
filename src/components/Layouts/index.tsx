@@ -153,7 +153,7 @@ const handle =({children} : Props)=>{
             if(outputElem && pagingElem){
                 outputElem.innerHTML = (scrollPer * 100).toFixed(2) + '%';
 
-                pagingElem.style.width = scrollPer * 100 + '%';
+                // pagingElem.style.width = scrollPer * 100 + '%';
                 // progress bar
                 // pagingElem.style.width = scrollPer * 100 + '%';
             }
