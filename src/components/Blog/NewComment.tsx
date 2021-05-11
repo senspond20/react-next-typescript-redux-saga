@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import commonStyle from "@components/Layouts/commonStyle";
 const NewCommentWrap = styled.div`
-   padding-top : 15px;
+   padding : 15px 0px 25px 0px;
    border-top: 1px solid #eee;
+  height: 100%;
+  width: 100%;
 `
 const InputWrap = styled.div`
   width: 100%;
@@ -26,7 +29,7 @@ const InputWrap = styled.div`
   margin-bottom: 0.3px;
 `
 const NewCommentBtn = styled.div`
-  background: rgba(15, 20, 184, 0.91);
+  background: ${commonStyle.palette.BLUE[8]};
   color: #cccccc;
   outline: none;
   width: 20%;
@@ -44,7 +47,7 @@ const NewComment= () =>{
 }
 const handle = () =>{
     // 글자수 측정
-    
+    console.log(commonStyle.palette.BLUE[9])
     return(
         <NewCommentWrap>
             <InputWrap>

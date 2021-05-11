@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "@components/Layouts"
-import BlogTemplate from "@components/Blog/blogTemplate"
-import TocWrap from "@components/Blog/tableOfContents"
+import BlogTemplate from "@components/Blog/BlogTemplate"
+import TocWrap from "@components/Blog/TableOfContents"
 const handle = () =>{
     return(
         <Layout>

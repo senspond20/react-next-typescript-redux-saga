@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import commonStyle from "@components/Layouts/commonStyle";
 /**
  * 최상단으로 이동
  */
@@ -18,7 +19,7 @@ type TopBarProp ={
     link : string, name : string
 }
 const TopBtn = styled.div`
-  position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: #0f3d57; color: white; display: flex; justify-content: center; align-items: center; cursor: pointer;
+  position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: ${commonStyle.palette.BLUE[8]}; color: white; display: flex; justify-content: center; align-items: center; cursor: pointer;
 `;
 const handle =() =>{
     return(

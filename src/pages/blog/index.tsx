@@ -1,6 +1,6 @@
 import React from "react";
 // import Layout from "@components/Layouts"
-import PostDetail from "@components/Blog/postDetail"
+import PostDetail from "@components/Blog/PostDetail"
 
 const handle = () =>{
     return(
