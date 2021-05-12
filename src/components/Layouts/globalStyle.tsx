@@ -94,7 +94,7 @@ const GlobalStyles = createGlobalStyle`
      h6 {  font-size: .67em; margin: 2.33em 0;}
      p {margin: 0.7em;}
     
-    @media(max-width: 1450px){
+    @media(max-width: 1150px){
       .headerMenu{
         //display:block;
       }
@@ -139,7 +139,7 @@ const GlobalStyles = createGlobalStyle`
     .blog-sidebar-ative{
       
     }
-    
+ 
  `;
 
 export default GlobalStyles;

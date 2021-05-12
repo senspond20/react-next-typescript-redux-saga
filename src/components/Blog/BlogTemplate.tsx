@@ -28,7 +28,7 @@ const Article = styled.article`
     background-color: rgba(0,0,0,0.009);
     padding: 3em;
     min-height: 960px;
-    border-left: 1px solid #eee;
+    //border-left: 1px solid #eee;
     border-right: 1px solid #eee;
     // ${commonStyle.border.boarderlic}; 
   //width: 960px;
@@ -40,6 +40,8 @@ const BottomNav = styled.nav`
   width: 100%;
   grid-column: 1 / 4;
   border-top: 1px solid #eee;
+  // background: ${commonStyle.palette.BLUE[9]};
+  background: #333;
   //border: 1px solid #999;
   //border-radius:8px;
 `;

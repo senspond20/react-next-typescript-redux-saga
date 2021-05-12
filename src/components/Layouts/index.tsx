@@ -36,7 +36,7 @@ const Anno = styled.p`
 
 const Hero = styled.div`
   height: 50px;
-
+  float: left;
   .hero-top-nav {
     display: flex;
     padding: 10px 15px;
@@ -54,6 +54,8 @@ const Hero = styled.div`
 
 
 const Header = styled.header`
+  content: '';
+  clear: both;
   padding: 1em;
   grid-column: 1 / 4;
   z-index: 1000;
@@ -66,15 +68,15 @@ const Header = styled.header`
           //a {
           //  color:#fff;
           //}
-  position: sticky;
-  top: 0;
+  //position: sticky;
+  //top: 0;
 `;
 
 
 const Footer = styled.footer`
   padding: 1em;
   //width: 1450px;
-  background: #333;
+  //background: #333;
   border-top: 1px solid #eee;
   grid-column: 1 / 4;
   text-align:center;
@@ -102,28 +104,7 @@ const ToggleBtn = styled.div`
   cursor: pointer;
 `;
 
-const ScrollWrap = styled.div`
-  width: 100%;
-  position: sticky;
-  top:50px;
-`
-const ScrollScore = styled.div`
-  //font-size: 2rem;
-  position: absolute;
-  top: 10px;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #333333;
-  //background: rgba(0, 0, 0, 0.4);
 
-`
-const ScrollPaging = styled.div`
-  height: 5px;
-  width: 0;
-  opacity: 0.87;
-  background: rgb(54, 36, 219);
-
-`
 /**
  *
  */
@@ -136,33 +117,12 @@ const navList : Item[]=
         {link:'/', name :'home'},
         {link:'/blog', name :'blog'},
         {link:'/service', name :'Service'},
-        {link:'/about', name :'About'}
+        {link:'/about', name :'About'},
+        {link:'/admin', name :'Admin'}
     ];
 
 const handle =({children} : Props)=>{
-    useEffect(() => {
-        let maxScrollValue = 0;
-        const pagingElem = document.querySelector('.paging');
-        const outputElem = document.querySelector('.output');
 
-        function resizeHandler() {
-            maxScrollValue = document.body.offsetHeight - window.innerHeight;
-        }
-        window.addEventListener('scroll', function () {
-            const scrollPer = pageYOffset / maxScrollValue;
-            if(outputElem && pagingElem){
-                outputElem.innerHTML = (scrollPer * 100).toFixed(2) + '%';
-
-                // pagingElem.style.width = scrollPer * 100 + '%';
-                // progress bar
-                // pagingElem.style.width = scrollPer * 100 + '%';
-            }
-
-        });
-
-        window.addEventListener('resize', resizeHandler);
-        resizeHandler();
-    },[]);
 
     const dispatch = useDispatch();
     const state = useSelector((state: RootState) => state.theme)
@@ -207,10 +167,7 @@ const handle =({children} : Props)=>{
 
                     </div>
                 </Header>
-                <ScrollWrap>
-                    <ScrollScore className="output">0</ScrollScore>
-                    <ScrollPaging className="paging"></ScrollPaging>
-                </ScrollWrap>
+
 
                 <section>
                     {/*<ContentWrapper>*/}
@@ -225,7 +182,7 @@ const handle =({children} : Props)=>{
                     {/*<Anno>footer</Anno>*/}
                     <FooterHighlight>
                         {/*<div>*/}
-                            <TextLogo text={'Just Do It!'}/>
+                            <TextLogo text={'S`ㅂㄺ!'}/>
 
                             {/*<address>dfdfd.com</address>*/}
                         {/*</div>*/}

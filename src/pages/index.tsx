@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "@components/Layouts"
 import styled from "styled-components";
-import BlogTemplate from "@components/Blog/blogTemplate";
-import TocWrap from "@components/Blog/tableOfContents";
-import SideBar from "@components/Blog/sideBar";
+import BlogTemplate from "@components/Blog/BlogTemplate";
+import TocWrap from "@components/Blog/TableOfContents";
+import SideBar from "@components/Blog/SideBar";
 import PostCard, {CardItem} from "@components/Blog/PostCard";
 import PostCardList from "@components/Blog/PostCardList";
 const Wrapper = styled.div`

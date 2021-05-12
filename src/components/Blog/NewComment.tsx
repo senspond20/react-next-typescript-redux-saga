@@ -1,10 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import commonStyle from "@components/Layouts/commonStyle";
+const NewCommentWrap = styled.div`
+   padding : 15px 0px 25px 0px;
+   border-top: 1px solid #eee;
+  height: 100%;
+  width: 100%;
+`
 const InputWrap = styled.div`
   width: 100%;
   textarea {
     width: 100%;
-    height: 140px;
+    height: 90px;
     border: 1px solid #eee;
     border-radius: 4px;
     resize: none;
@@ -22,11 +29,12 @@ const InputWrap = styled.div`
   margin-bottom: 0.3px;
 `
 const NewCommentBtn = styled.div`
-  background: rgba(15, 20, 184, 0.91);
+  background: ${commonStyle.palette.BLUE[8]};
   color: #cccccc;
   outline: none;
-  width: 100%;
-  height: 30px;
+  width: 20%;
+  float: right;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,9 +47,9 @@ const NewComment= () =>{
 }
 const handle = () =>{
     // 글자수 측정
-    
+    console.log(commonStyle.palette.BLUE[9])
     return(
-        <div>
+        <NewCommentWrap>
             <InputWrap>
                 <textarea placeholder={'★ 새로운 댓글을 달아보세요'}/>
             </InputWrap>
@@ -50,7 +58,7 @@ const handle = () =>{
                     등록
                 </div>
             </NewCommentBtn>
-        </div>
+        </NewCommentWrap>
     )
 }
 export default handle;
