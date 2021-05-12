@@ -8,7 +8,6 @@ import Counter from './counter';
 
 const Paragraph = styled.p`
   font-size: ${commonStyle.fontSizes.paragraph};
-  color: ${commonStyle.colors.gray_1};
 `;
 const NavbarWrapper = styled.div`
   background-color: #fff;
@@ -56,7 +55,7 @@ function Home() {
       // </ThemeProvider>
   )
 }
-Home.getInitialProps = async (context) => {
+Home.getInitialProps = async (context: { store?: any; }) => {
     console.log("==========================")
     console.log(Object.keys(context))
     // const [ctx, Component] = context;

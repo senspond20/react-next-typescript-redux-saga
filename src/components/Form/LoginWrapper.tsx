@@ -20,7 +20,6 @@ const ShadowedBox = styled.div`
 // ${shadow(2)}
 // 로고
 const LogoWrapper = styled.div`
-    //background: ${oc.teal[6]};
     background: #eee;
     height: 5rem;
     display: flex;

@@ -32,8 +32,8 @@ const handle = () =>{
     return(
         <>
             <form onSubmit={onSubmitCk} action={'/api/login'} method={'post'}>
-                <InputWithLabel label="이메일" name="email" placeholder="이메일" />
-                <InputWithLabel label="password"  type ='password' name="password" placeholder="비밀번호" />
+                {/*<InputWithLabel label="이메일" name="email" placeholder="이메일" />*/}
+                {/*<InputWithLabel label="password"  type ='password' name="password" placeholder="비밀번호" />*/}
                 <button>전송</button>
                 <button type={"reset"} >취소</button>
             </form>

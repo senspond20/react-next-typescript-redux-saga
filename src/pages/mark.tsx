@@ -74,9 +74,10 @@ Some *emphasis* and <strong>strong</strong>!
 </div>`
     // @ts-ignore
     return(
-        <ReactMarkdown remarkPlugins={[gfm]}
-                       components={comp}
-                       children={markdown}/>
+        <div>d</div>
+        // <ReactMarkdown remarkPlugins={[gfm]}
+        //                components={comp}
+        //                children={markdown}/>
     )
 }
 // Did you know you can use tildes instead of backticks for code in markdown? ✨
@@ -111,11 +112,12 @@ console.log(5,7);
 &lt;div class="note">ggg</div&gt;
 `
     return(
-        <ReactMarkdown
-            children={content}
-            remarkPlugins={[gfm]}
-            renderers={{ code: CodeBlock }}
-        />
+        <div></div>
+        // <ReactMarkdown
+        //     children={content}
+        //     remarkPlugins={[gfm]}
+        //     renderers={{ code: CodeBlock }}
+        // />
         )
 
 }
