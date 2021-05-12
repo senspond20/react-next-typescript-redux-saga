@@ -24,12 +24,12 @@ const Wrapper = styled.div`
 type Props ={
     className? : string
     label : string,
-    rest : string
+    rest? : (param: any) => void
 }
-const handle = ({className,label,...rest} : Props) =>{
+const handle = ({className,label,...rest} : Props) : JSX.Element=>{
     return(
         <Wrapper className={className}>
-            <label>{label}</label><input type={'text'} {...rest}/>
+            <label>{label}</label><input {...rest}/>
         </Wrapper>
 
     )

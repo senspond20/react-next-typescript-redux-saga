@@ -1,7 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { NextApiRequest, NextApiResponse } from "next";
 
-export default (req, res) => {
-    const email = req.body;
-    console.log(email)
-    res.status(200).json({ email : 'sdfemail' })
+export default (req : NextApiRequest, res : NextApiResponse) => {
+    // const { email } = req.query as { email: string }; get
+    const {email, password} = req.body;
+    console.log(email ,password)
+    res.status(200).json({ email : email , password : password})
 }

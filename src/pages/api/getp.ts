@@ -5,5 +5,5 @@ export default (req : NextApiRequest, res : NextApiResponse) => {
     // const { email } = req.query as { email: string }; get
     // const {email, password} = req;
     console.log(req)
-    res.status(200).json({ ''})
+    res.status(200).json({ggg : 'dfdf'})
 }

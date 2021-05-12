@@ -30,6 +30,7 @@ class Login extends Component {
                     buttonText="Google"
                     onSuccess={this.responseGoogle}
                     onFailure={this.responseFail}
+                    cookiePolicy={'single_host_origin'}
                 />
             </Container>
         );

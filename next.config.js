@@ -1,6 +1,8 @@
 require('dotenv').config();
-// const withCSS = require('@zeit/next-css')
-module.exports = ({
+// const withTM = require("next-transpile-modules");
+// const withPlugins = require("next-compose-plugins");
+const withCSS = require('@zeit/next-css')({
+// module.exports = ({
     // typescript: {
     //     ignoreDevErrors: true,
     // },
@@ -19,3 +21,13 @@ module.exports = ({
         VERSION : process.env.REACT_APP_SERVICE_VERSION,
     },
 });
+// module.exports = withPlugins([
+//     [
+//         withTM,
+//         {
+//             transpileModules: [
+//                 "react-syntax-highlighter",
+//             ]
+//         }
+//     ],
+// ])
