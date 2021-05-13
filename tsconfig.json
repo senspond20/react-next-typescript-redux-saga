@@ -6,6 +6,7 @@
         "@components/*" : ["components/*"],
         "@layouts/*" : ["layouts"],
         "@stores/*" : ["stores/*"],
+        "@repository/*" : ["repository/*"]
       },
       "target": "es5",
       "lib": [

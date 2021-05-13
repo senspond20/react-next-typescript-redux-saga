@@ -29,6 +29,9 @@ module.exports = withPlugins([
 ], nextConfig)
 
 module.exports = {
+    output: {
+        globalObject: 'this'
+    },
     env: {
         VERSION : process.env.REACT_APP_SERVICE_VERSION,
     }

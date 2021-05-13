@@ -1,7 +1,10 @@
 import React from "react";
-import TuiEditor, {InitEditorType} from "@components/Editor/TuiEditor"
+import {InitEditorType} from "@components/Editor/TuiEditor"
 import styled from "styled-components";
-
+import dynamic from "next/dynamic";
+const TuiEditor = dynamic(() => import("@components/Editor/TuiEditor"), {
+    ssr: false,
+})
 
 const Container = styled.div`
   .tui-editor{

@@ -5,7 +5,16 @@ import Seo from '@components/Seo'
 import Layout from "@components/Layouts";
 import withReduxSaga from 'next-redux-saga'
 import {Provider} from "react-redux";
-
+import 'codemirror/lib/codemirror.css';
+import '@toast-ui/editor/dist/toastui-editor.css';
+// @ts-ignore
+function SafeHydrate({ children }) {
+    return (
+        <div suppressHydrationWarning>
+            {typeof window === 'undefined' ? null : children}
+        </div>
+    )
+}
 // let restore;
 function WrappedApp ({
      Component,
@@ -15,7 +24,10 @@ function WrappedApp ({
         // <Provider store={restore}>
         //     <Layout>
                // {/*<Seo/>*/}
-                <Component {...pageProps} />
+        <SafeHydrate>
+            <Seo/>
+            <Component {...pageProps} />
+        </SafeHydrate>
             // </Layout>
         // </Provider>
     )

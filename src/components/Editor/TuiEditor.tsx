@@ -8,7 +8,7 @@ import '@toast-ui/editor/dist/toastui-editor.css';
 
 import { Editor as EditorType, EditorProps } from '@toast-ui/react-editor';
 import { TuiEditorWithForwardedProps } from './TuiEditorWrapper';
-// import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
+import colorSyntaxPlugin from "@toast-ui/editor-plugin-color-syntax";
 import hljs from "highlight.js";
 import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight";
 import chart from '@toast-ui/editor-plugin-chart';
@@ -18,7 +18,11 @@ export enum InitEditorType{
     html='wysiwyg'
 }
 //  next.js에서는 dynamic이라는 모듈을 제공해서 promise resolve 과정 없이도 변수에 할당할 수 있도록 해준다.
+
+// const colorSyntaxPlugin = dynamic<any>(()=>import("@toast-ui/editor-plugin-color-syntax"),{ssr:false});
+
 const Editor = dynamic<TuiEditorWithForwardedProps>(() => import("./TuiEditorWrapper"), { ssr: false });
+
 const EditorWithForwardedRef = React.forwardRef<EditorType | undefined, EditorProps>((
     props,
     ref) => (
@@ -38,6 +42,7 @@ const TuiEditor : React.FC<EditorProps> = (props) => {
         }
     }, [props, editorRef]);
 
+    // @ts-ignore
     return <div>
         <EditorWithForwardedRef
             {...props}

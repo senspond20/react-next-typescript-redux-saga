@@ -118,7 +118,8 @@ const navList : Item[]=
         {link:'/blog', name :'blog'},
         {link:'/service', name :'Service'},
         {link:'/about', name :'About'},
-        {link:'/admin', name :'Admin'}
+        {link:'/admin', name :'Admin'},
+        {link:'/category2', name :'Category'}
     ];
 
 const handle =({children} : Props)=>{
