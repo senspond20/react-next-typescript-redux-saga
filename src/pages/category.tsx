@@ -6,62 +6,140 @@ import MultiNode from "../utils/MultiNode";
 
 const Container = styled.div`
   section {
-    //width: 100vw;
+    width: 100vw;
     display: flex;
     justify-items: center;
-    align-items: center;
     article{
       width: 40%;
+      table {
+        thead{
+          background: #eee;
+        }
+        border-collapse: collapse;
+        td,th{
+          border: 1px solid #555;
+          padding: 10px;
+          text-align: center;
+        }
+      }
     }
   }
 `
+const CateGoryWrapper = styled.div`
+  ul{
+    
+  }
+  ul li{
+    
+    cursor: pointer;
+  }
+  
+  label.category-item{
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  span.category-dept{
+    color: red;
+  }
 
+  .category-tree {
+    color: #393939;
+  }
+
+  .category-tree, .category-tree ul {
+    list-style: none;
+    padding-left: 17px;
+  }
+
+  .category-tree *:before {
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+  }
+
+  .category-tree label {
+    cursor: pointer;
+  }
+
+  .category-tree label:before {
+    content: '\\f256';
+    font-family: fontello;
+  }
+
+  .category-tree {
+    text-decoration: none;
+    color: #393939;
+  }
+
+  .category-tree a:before {
+    content: '\\e800';
+    font-family: fontello;
+  }
+
+  .category-tree input[type="checkbox"] {
+    display: none;
+  }
+
+  .category-tree input[type="checkbox"]:checked ~ ul {
+    display: none;
+  }
+
+  .category-tree input[type="checkbox"]:checked + label:before {
+    content: '\\f255';
+    font-family: fontello;
+  }
+`;
 const handle = () =>{
 
     const data = getCategorySampleData();
-    const tree = getTree<String>(data)
-
-
-    console.log(data)
+    const tree = getTree<String>(data);
     console.log(tree)
 
+    const getObject = () =>{
+        return (
+            <ul>
+                {tree?.getChildren().map((item,idx)=>(
+                    <li key={idx}>
+                        <span className={'category-item'}>{item.getData()}</span>
+                        (<span className={'category-dept'}>{item.getDept()}</span>)
+                        {recAppend(item,0)}
+                    </li>
+                ))}
+            </ul>
+        )
+    };
+    // @ts-ignore
+    const category = recAppend(tree,0);
 
-    useEffect(()=>{
-        function printTree(data: any[], dom: any){
-            const root = document.createElement('ul');
-            let lvl = 1; //first lvl
-            data.forEach(function(item){
-                const li = document.createElement('li')
-                const span = document.createElement('span');
+    function itemClick(item: MultiNode<String>){
+        // alert(item.getData())
+        console.log(item.getData())
+    }
+    let count = 0;
+    function recAppend(item: MultiNode<String>,count : number){
 
-                span.append(`${item.name}(${lvl})`);
-                li.appendChild(span)
-                root.appendChild(li)
-                const list = item.items;
-                recAppend(list,li,lvl)
-            })
-            // console.log(root)
-            // recAppend(data,root,lvl)
-            return root;
-        };
+        const list = item.getChildren();
 
-        function recAppend(list: { name: any; items: any; }[], ele: HTMLLIElement, lvl : number){
-            if(list.length !=0){
-                lvl++;
-                const ul = document.createElement('ul');
-                list.forEach(function(item: { name: any; items: any; }){
-                    const li = document.createElement('li')
-                    const span = document.createElement('span');
-                    span.append(`${item.name}(${lvl})`);
-                    li.appendChild(span)
-                    ul.appendChild(li)
-                    return recAppend(item.items, li,lvl);
-                })
-                ele.appendChild(ul);
-            }
-        };
+        if(list != null){
+            ++count;
+            return(
+                <ul className={'category-tree'}>
+                    {list.map((item,idx)=>(
 
-    },[])
+                        <li key={`${idx}${count}`}>
+                            <input type ='checkbox' id={`category-node${idx}${count}`} />
+                            <label className={'category-item'} htmlFor={`category-node${idx}${count}`} onClick={() => itemClick(item)}>{item.getData()}</label>
+                            (<span className={'category-dept'}>{item.getDept()}</span>)
+                            {recAppend(item,++count)}
+                        </li>
+
+                    ))}
+                </ul>
+            )
+        }
+
+    };
 
 
     function getTreeData(array: string | any[]) {
@@ -94,18 +172,28 @@ const handle = () =>{
     return (
         <Container>
             <h1>Category</h1>
+            <hr/>
+
             <section>
+
+                {/* 1 */}
+                <article>
+                    <div>
+                        <h2>Table Obj</h2>
+                        <pre>{JSON.stringify(data,null,2)}</pre>
+                    </div>
+                </article>
+
+                {/* 2 */}
                 <article>
                     <h2>Table</h2>
                     <table>
                         <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>pId</th>
-                            <th>data</th>
-                        </tr>
+                            <tr>
+                                { Object.keys(data[0]).map((o,i)=>  (<th key={i}>{o}</th>)) }
+                            </tr>
                         </thead>
-                        <thead>
+                        <tbody>
                         {data.map((item,idx)=>(
                             <tr key={idx}>
                                 <td>{item.id}</td>
@@ -113,20 +201,24 @@ const handle = () =>{
                                 <td>{item.data}</td>
                             </tr>
                         ))}
-                        </thead>
+                        </tbody>
                     </table>
                 </article>
+
+                {/* 3 */}
                 <article>
-                    <h2>Object1</h2>
+                    <h2>Convert Object1</h2>
                     <pre>
-                        { tree?.print()}
+                        {tree?.print()}
                     </pre>
                 </article>
-                <article>
-                    <h2>Object2</h2>
-                    <pre>
 
-                    </pre>
+                {/* 4 */}
+                <article>
+                    <h2>Category</h2>
+                    <CateGoryWrapper>
+                        {category}
+                    </CateGoryWrapper>
                 </article>
             </section>
 

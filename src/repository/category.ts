@@ -21,11 +21,17 @@ export function getCategorySampleData(): Array <MultiTable<String>> {
    // table.
    array.push(new MultiTable<String>( 1,0,'개발'));
    array.push(new MultiTable<String>( 2,1,'웹'));
-   array.push(new MultiTable<String>(13,1,'하드웨어'));
+   array.push(new MultiTable<String>(13,1,'임베디드'));
    array.push(new MultiTable<String>(4,2, '프론트엔드'));
+   array.push(new MultiTable<String>(14,4, 'React'));
+   array.push(new MultiTable<String>(24,4, 'Vue'));
+   array.push(new MultiTable<String>(3,5, 'Java'));
+   array.push(new MultiTable<String>(18,5, 'NodeJs'));
    array.push(new MultiTable<String>(5,2,'백엔드'));
    array.push(new MultiTable<String>(6,0,'일상'));
    array.push(new MultiTable<String>(7,6, '일기장'));
+   array.push(new MultiTable<String>(19,6, '생각의자유'));
+   array.push(new MultiTable<String>(20,13, 'ARM-Cortex-M3'));
    return array;
 }
 
