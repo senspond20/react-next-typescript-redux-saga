@@ -63,7 +63,7 @@ const CateGoryWrapper = styled.div`
   }
 
   .category-tree label:before {
-    content: '\\f256';
+    content: '-';
     font-family: fontello;
   }
 
@@ -73,7 +73,7 @@ const CateGoryWrapper = styled.div`
   }
 
   .category-tree a:before {
-    content: '\\e800';
+    content: '0';
     font-family: fontello;
   }
 
@@ -86,7 +86,7 @@ const CateGoryWrapper = styled.div`
   }
 
   .category-tree input[type="checkbox"]:checked + label:before {
-    content: '\\f255';
+    content: '+';
     font-family: fontello;
   }
 `;
