@@ -13,15 +13,15 @@ import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 // Step 1. Import highlight.js
 // @ts-ignore
 // import hljs from "highlight.js";
-import hljs from 'highlight.js/lib/core';
+import hljs from 'highlight.js';
 import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
 // Step 2. Import language files of highlight.js that you need
 // @ts-ignore
-// import javascript from 'highlight.js/lib/languages/javascript';
+import javascript from 'highlight.js/lib/languages/javascript';
 // import clojure from 'highlight.js/lib/languages/clojure';
 
 // Step 3. Register languages
-// hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('javascript', javascript);
 // hljs.registerLanguage('clojure', clojure);
 
 
