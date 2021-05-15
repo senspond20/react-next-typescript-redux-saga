@@ -1,21 +1,49 @@
 require('dotenv').config();
-// const withCSS = require('@zeit/next-css')
-module.exports = ({
-    // typescript: {
-    //     ignoreDevErrors: true,
-    // },
-    use: {
-        loader: "url-loader"
-    },
-    target: "serverless", // Next.js 빌드 대상을 "serverless"로 설정하여 서버리스 빌드를 활성화 한다.
-     webpack: (config, options) => {
-        // Fixes npm packages that depend on `fs` module
-        config.node = {
-            fs: "empty",
-        };
-        return config;
+// const withTM = require("next-transpile-modules");
+// const withPlugins = require("next-compose-plugins");
+
+const withPlugins = require('next-compose-plugins')
+const sass = require('@zeit/next-sass')
+const css = require('@zeit/next-css')
+
+const nextConfig = {
+    webpack: function(config){
+        config.module.rules.push({
+            test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+            use: {
+                loader: 'url-loader',
+                options: {
+                    limit: 100000,
+                    name: '[name].[ext]'
+                }}
+        })
+        return config
+    }
+}
+
+module.exports = withPlugins([
+    [css],
+    [sass, {
+        cssModules: true
+    }]
+], nextConfig)
+
+module.exports = {
+    output: {
+        globalObject: 'this'
     },
     env: {
         VERSION : process.env.REACT_APP_SERVICE_VERSION,
-    },
-});
+    }
+}
+
+// module.exports = withPlugins([
+//     [
+//         withTM,
+//         {
+//             transpileModules: [
+//                 "react-syntax-highlighter",
+//             ]
+//         }
+//     ],
+// ])

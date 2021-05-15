@@ -124,17 +124,19 @@ const handle=({name,thumbnail, comment,date , replyCount} : CommentItem)=>{
                 </article>
             </Wrapper>
             <ThisPlus onClick={showReply}>
-                <div className={'plus-icon'}>{isShow === false && replyCount !== 0 ?  <span>+</span> : <span>-</span> }</div>
+                {isShow === false && replyCount !== 0
+                    ? <div className={'plus-icon'}><span>+</span></div>
+                    : <div className={'plus-icon plus-active'}><span>-</span></div> }
                 <div className={'plus-score'}>
                     <input ref={isCountZero} type={'hidden'} readOnly={true} value={replyCount}/>
                     <span>{replyCount}</span>&nbsp;개 댓글</div>
                 <div className={'plus-show-man'}></div>
             </ThisPlus>
-            {isShow ?
-                <div className={'reply-list'}>
+            {isShow
+                ?(<div className={'reply-list'}>
                     대댓글 컴포넌트
-                </div>
-                : null
+                 </div>)
+                : (null)
             }
         </>
     )
