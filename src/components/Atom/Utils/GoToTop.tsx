@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Common from "components/Templates/Styles/Common";
-
+import Common from "styles/Common";
 
 const TopBtn = styled.div`
   ${Common.nonSelect};
-  position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: ${Common.palette.BLUE[8]}; color: white; display: flex; justify-content: center; align-items: center; cursor: pointer;
+  position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; 
+  background-color: ${Common.palette.BLUE[8]}; color: white; 
+  ${Common.flex.flexCenter};
+  cursor: pointer;
 `;
 function GoToTop(){
     /**
