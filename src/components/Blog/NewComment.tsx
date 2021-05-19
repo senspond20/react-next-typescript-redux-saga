@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import commonStyle from "styles/Common";
+import commonStyle from "components/Templates/styles/Common";
 const NewCommentWrap = styled.div`
    padding : 15px 0px 25px 0px;
    border-top: 1px solid #eee;

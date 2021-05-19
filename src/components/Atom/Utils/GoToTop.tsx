@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Common from "styles/Common";
+import Common from "components/Templates/styles/Common";
 
 const TopBtn = styled.div`
   ${Common.nonSelect};

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
-import commonStyle from "styles/Common";
+import commonStyle from "components/Templates/styles/Common";
 
 const TocTitle = styled.div`
   display: flex;

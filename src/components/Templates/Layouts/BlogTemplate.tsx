@@ -1,6 +1,6 @@
 import React, {ReactNode} from "react";
 import styled from "styled-components";
-import commonStyle from "styles/Common";
+import commonStyle from "components/Templates/styles/Common";
 
 const Anno = styled.p`
   color: #4ba1c3;

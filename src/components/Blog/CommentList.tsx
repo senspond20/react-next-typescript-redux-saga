@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Comment, {CommentItem} from "@components/Blog/Comment";
-import commonStyle from "styles/Common";
+import commonStyle from "components/Templates/styles/Common";
 import ThisPlus from "@components/Blog/ThisPlus";
 const Wrapper = styled.div`
   padding: 10px 10px;
