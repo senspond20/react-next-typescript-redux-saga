@@ -7,8 +7,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    height: 100%;
-    overflow: auto;
+    /** overflow : auto; -> 모달창 화면꽉차게 하려고 줬었지만 버그가 있다 */
+    /* height: 100%; */
+    /* overflow: auto; */
     color : ${({theme}) => theme.body.fgColor};
     background : ${({theme}) => theme.body.bgColor};
     font-size: 1.05em;
