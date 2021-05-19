@@ -9,21 +9,24 @@ const TopBtn = styled.div`
   ${Common.flex.flexCenter};
   cursor: pointer;
 `;
+/**
+ * 최상단으로 이동
+ */
+
+const eventHandler = () =>{
+    console.log('Top')
+    // 바로
+    //window.scrollTo(0, 0)
+    // 부드럽게
+    window.scroll({
+        behavior:'smooth',
+        top : 0,
+        left : 0
+    })
+}
+
 function GoToTop(){
-    /**
-     * 최상단으로 이동
-     */
-    const eventHandler = () =>{
-        console.log('Top')
-        // 바로
-        //window.scrollTo(0, 0)
-        // 부드럽게
-        window.scroll({
-            behavior:'smooth',
-            top : 0,
-            left : 0
-        })
-    }
+
     return(
         <TopBtn onClick={eventHandler}>Top</TopBtn>
     )
