@@ -1,13 +1,10 @@
-import {Theme} from './actionTypes';
 
-export const dark = () => {
-    return {
-        type: Theme.dark
-    }
-}
+export const Theme = {
+    dark :'dark',
+    light: 'light'
+};
 
-export const light = () => {
-    return {
-        type: Theme.light
-    }
-}
+export const dark = () => ({type: Theme.dark})
+export const light = () => ({type: Theme.light})
+
+

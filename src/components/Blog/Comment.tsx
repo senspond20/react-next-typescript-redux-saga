@@ -1,6 +1,6 @@
 import React, {RefObject, useEffect, useRef, useState} from "react";
 import styled from "styled-components";
-import commonStyle from "@components/Layouts/commonStyle";
+import commonStyle from "styles/Common";
 // import ThisPlus from "@components/Blog/ThisPlus";
 export type CommentItem ={
     name : string,
