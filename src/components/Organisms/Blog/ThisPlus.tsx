@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import commonStyle from "components/Templates/styles/Common";
+import commonStyle from "@components/Templates/styles/Common";
 
 const ThisPlus = styled.article`
   display: flex;

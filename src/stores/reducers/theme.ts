@@ -1,19 +1,19 @@
 import { ActionProps } from '../types/state';
-import {Theme} from '../actions/theme'
+import {ThemeType} from "@components/Templates/styles/Theme";
 
 /**
  * 기본테마
  */
 const initialState = {
-    mode : Theme.light
+    mode : ThemeType.light
 };
 
 const handle = (state = initialState, action: ActionProps) => {
     switch (action.type) {
-        case Theme.dark:
-            return { ...state, mode: state.mode = Theme.dark }
-        case Theme.light:
-            return { ...state, mode: state.mode = Theme.light }
+        case ThemeType.dark:
+            return { ...state, mode: state.mode = ThemeType.dark }
+        case ThemeType.light:
+            return { ...state, mode: state.mode = ThemeType.light }
         default:
             return state;
     }

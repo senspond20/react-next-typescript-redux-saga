@@ -3,9 +3,9 @@ import Layout from "@components/Templates/Layouts/MainTemplate"
 import styled from "styled-components";
 import BlogTemplate from "@components/Templates/Layouts/BlogTemplate";
 import TocWrap from "@components/Templates/Layouts/TableOfContents";
-import SideBar from "@components/Templates/Layouts/SideBar";
-import PostCard, {CardItem} from "@components/Blog/PostCard";
-import PostCardList from "@components/Blog/PostCardList";
+import SideBar from "@components/Templates/Layouts/SideBarTemplate";
+import PostCard, {CardItem} from "@components/Organisms/Blog/PostCard";
+import PostCardList from "@components/Organisms/Blog/PostCardList";
 const Wrapper = styled.div`
   flex: 1;
   display: flex;

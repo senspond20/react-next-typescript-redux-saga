@@ -1,7 +1,7 @@
 import React from "react";
 import MenuItem from "@components/Atom/Utils/MenuItem";
 import styled from "styled-components";
-import Category from "@components/Molecules/List/Category";
+import Category from "@components/Molecules/List/CategoryList";
 const Anno = styled.p`
   color: #4ba1c3;
 `
