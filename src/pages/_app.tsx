@@ -5,7 +5,14 @@ import Seo from '@components/Templates/Partials/SEO'
 import withReduxSaga from 'next-redux-saga'
 import {CookiesProvider} from "react-cookie";
 
-
+// @ts-ignore
+function SafeHydrate({ children }) {
+    return (
+        <div suppressHydrationWarning>
+            {typeof window === 'undefined' ? null : children}
+        </div>
+    )
+}
 function WrappedApp ({Component, pageProps } : AppProps) : JSX.Element{
 
     const [isLoading, setLoading] = useState(false)
@@ -21,12 +28,14 @@ function WrappedApp ({Component, pageProps } : AppProps) : JSX.Element{
         transition: 'display 3s',
     };
     return (
-        <CookiesProvider>
-            <Seo/>
-            <span style={!isLoading ? inVisibleStyle : visibleStyle}>
+        <SafeHydrate>
+            <CookiesProvider>
+                <span style={!isLoading ? inVisibleStyle : visibleStyle}>
                 <Component {...pageProps} />
             </span>
-        </CookiesProvider>
+            </CookiesProvider>
+        </SafeHydrate>
+
     )
 }
 WrappedApp.getInitialProps = async (context: { Component: any; ctx: any; }) =>{

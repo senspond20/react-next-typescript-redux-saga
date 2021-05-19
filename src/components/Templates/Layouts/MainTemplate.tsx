@@ -1,30 +1,32 @@
-import GoToTop from 'components/Atom/Utils/GoToTop';
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@stores/reducers";
-import {ThemeType} from '../styles/Theme'
-import {darkTheme, lightTheme} from "@components/Templates/styles/Theme";
-import {ThemeProvider} from "styled-components";
-import ThemeChanger from "@components/Templates/Partials/ThemeChanger";
-import GlobalStyle from "@components/Templates/styles/Global";
+import {Hero,Header,Footer,SEO} from "@components/Templates/Partials";
+import GoToTop from 'components/Atom/Utils/GoToTop';
+import ThemeLayout from "@components/Templates/Layouts/ThemeLayout";
+import styled from "styled-components";
+
 type Props ={
     title? : string
     children? : React.ReactNode
 }
 
-const MainTemplate = (props : Props) =>{
+const Content = styled.main`
+  min-height: 980px;
+`;
 
-    const state = useSelector((state: RootState) => state.theme)
-    const isLight = (state.mode === ThemeType.light);
-    const theme = (isLight) ? lightTheme : darkTheme;
-    console.log(theme)
+const MainTemplate = (props : Props) =>{
     return(
-        <ThemeProvider theme={theme}>
-            <GlobalStyle/>
-            {props.children}
-            <ThemeChanger mode = {isLight}/>
+        <ThemeLayout>
+            <SEO title={props.title}/>
+            <Hero/>
+            <Header/>
+            <section>
+                <Content>
+                    {props.children}
+                </Content>
+            </section>
+            <Footer/>
             <GoToTop/>
-        </ThemeProvider>
+        </ThemeLayout>
     )
 }
 
