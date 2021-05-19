@@ -2,12 +2,13 @@
 import Image from 'next/image'
 // import styles from '../public/css/Home.module.css'
 import styles from '@public/css/Home.module.css';
-import NextSeo from '@components/Seo';
+import GoToTop from 'components/Atom/Utils/GoToTop';
+
 export default function Home() {
   
   return (
     <div className={styles.container}>
-      <NextSeo/>
+      {/* <NextSeo/> */}
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -61,6 +62,7 @@ export default function Home() {
           </span>
         </a>
       </footer>
+      <GoToTop/>
     </div>
   )
 }
