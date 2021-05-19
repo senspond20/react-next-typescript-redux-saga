@@ -5,7 +5,7 @@ import TextLogo from "@components/Atom/Icon/TextLogo";
 const FooterWrapper = styled.footer`
   padding: 1em;
   //width: 1450px;
-  //background: #333;
+  background: #333;
   border-top: 1px solid #eee;
   grid-column: 1 / 4;
   text-align:center;

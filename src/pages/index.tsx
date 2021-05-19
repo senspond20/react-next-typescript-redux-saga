@@ -3,7 +3,7 @@ import Layout from "@components/Templates/Layouts/MainTemplate"
 import styled from "styled-components";
 import BlogTemplate from "@components/Templates/Layouts/BlogTemplate";
 import TocWrap from "@components/Templates/Layouts/TableOfContents";
-import SideBar from "@components/Templates/Layouts/SideBarTemplate";
+import SideBar from "@components/Templates/Partials/Aside";
 import PostCard, {CardItem} from "@components/Organisms/Blog/PostCard";
 import PostCardList from "@components/Organisms/Blog/PostCardList";
 const Wrapper = styled.div`
