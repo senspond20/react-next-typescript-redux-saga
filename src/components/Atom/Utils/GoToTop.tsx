@@ -18,6 +18,14 @@ const eventHandler = () =>{
     // 바로
     //window.scrollTo(0, 0)
     // 부드럽게
+    // const root = document.getElementById('__next');
+    // console.log(root)
+    // root?.scroll({
+    //     behavior:'smooth',
+    //     top : 0,
+    //     left : 0
+    // })
+
     window.scroll({
         behavior:'smooth',
         top : 0,

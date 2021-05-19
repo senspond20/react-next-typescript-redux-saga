@@ -43,11 +43,14 @@ const ThemeLayout = ({children} : Props) =>{
     const themeStyle = theme === ThemeType.dark ? darkTheme : lightTheme
 
     return(
+        <div>
         <ThemeProvider theme={themeStyle}>
             <GlobalStyle/>
             <button onClick={ToggleTheme}>테마스위치</button>
             {children}
         </ThemeProvider>
+        </div>
+
     )
 }
 

@@ -14,20 +14,23 @@ const Content = styled.main`
   min-height: 980px;
 `;
 
-const MainTemplate = (props : Props) =>{
+const MainTemplate = ({title, children} : Props) =>{
     return(
+        <div>
         <ThemeLayout>
-            <SEO title={props.title}/>
+            <SEO title={title}/>
             <Hero/>
             <Header/>
             <section>
                 <Content>
-                    {props.children}
+                    {children}
                 </Content>
             </section>
             <Footer/>
             <GoToTop/>
         </ThemeLayout>
+        </div>
+
     )
 }
 
