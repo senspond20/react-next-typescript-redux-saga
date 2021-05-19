@@ -60,8 +60,35 @@ const handle = ({data }: Props) =>{
 }
 export const getStaticProps : GetStaticProps= async ({ params }) => {
     try {
-        const response = await axios.get('http://localhost:3000/api/posts');
-        const data = response.data
+        // const response = await axios.get('http://localhost:3000/api/posts');
+        // const data = response.data
+
+        const data =[
+            {
+                id :1,
+                writer : '아이린',
+                title : '안녕하세요',
+                content : '내용입니다'
+            },
+            {
+                id :2,
+                writer : '아이투',
+                title : '안녕하세요',
+                content : 'NextJs 따라할가요? export default (req : NextApiRequest, res : NextApiResponse) => {'
+            },
+            {
+                id :3,
+                writer : '아이삼',
+                title  : '안녕하십니깡? 새우깡?',
+                content : '영구 읍다~~~~~~'
+            },
+            {
+                id :4,
+                writer : '아이포',
+                title:  '자바랑 자바스크립트',
+                content : '자바와 자바스크립트의 차이는? '
+            }
+        ]
         return { props: {data} }
     } catch (err) {
         return { props: { errors: err.message } }
