@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import common from "@components/Templates/styles/Common";
 
@@ -12,7 +12,7 @@ const HeaderWrapper = styled.header`
   height: 50px;
   background-color: #f3f3f8;
   border-bottom: 1px solid #eee;
-  ${common.flex.flexCenter};
+  /* ${common.flex.flexCenter}; */
 `;
 const ToggleSideBar = ()=>{
     document.querySelector('blog-sidebar')?.classList.add('');
@@ -22,6 +22,9 @@ const ToggleBtn = styled.div`
   cursor: pointer;
 `;
 function Header(){
+    const [isRemoveSideBar, setIsRemoveSideBar] = useState();
+    // http://blog.302chanwoo.com/2016/08/react-redux-resize/ 
+    // 이거 해보자
     return(
         <HeaderWrapper>
             <div>
