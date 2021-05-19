@@ -1,5 +1,5 @@
 import { ActionProps } from '../types/state';
-import {Theme} from '../actions/actionTypes'
+import {Theme} from '../actions/theme'
 
 /**
  * 기본테마

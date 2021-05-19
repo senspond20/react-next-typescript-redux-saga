@@ -17,7 +17,6 @@ const makeStore: MakeStore<{}> = () => {
     const middlewares = [sagaMiddleware];
 
     const store = createStore(rootReducer, {}, bindMiddleware([...middlewares]));
-
     sagaMiddleware.run(rootSaga);
     return store
 }

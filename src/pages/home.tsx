@@ -1,4 +1,4 @@
-import { commonStyle } from '@components/Layouts/Theme';
+import commonStyle  from 'styles/Common';
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';

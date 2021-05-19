@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import commonStyle from "@components/Layouts/commonStyle";
+import commonStyle from "styles/Common";
 
 const ThisPlus = styled.article`
   display: flex;
