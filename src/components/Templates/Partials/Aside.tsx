@@ -13,7 +13,7 @@ const Aside = styled.div`
     }
     ul.aside_category{
         li{
-
+                
         }
     }
 `;

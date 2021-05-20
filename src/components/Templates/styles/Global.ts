@@ -40,8 +40,14 @@ const GlobalStyle = createGlobalStyle`
   h6 {  font-size: .67em; margin: 2.33em 0;}
   p {margin: 0.7em;}
   
-
+  visible-opacity{
+    opacity: 1;
+    z-index:9999;
+    /* display: block; */
+  }
   @media(max-width: 1150px){
+    .top-hero{display: none}
+    .header-wrap{position: sticky; top:0;}
     .headerMenu{
       //display:block;
     }
@@ -54,17 +60,20 @@ const GlobalStyle = createGlobalStyle`
     //}
     .blog-main{
       grid-column: 1 / 4;
+      /* padding: 1.5rem; */
     }
     /* aside{
         grid-row: 3 / 5;
         grid-column: 1 / 4;
     } */
   }
+ 
   @media(max-width: 800px){
-    //.top-hero{display: none}
+
     .home-card-wrap{
       grid-column: 1 / 4;
     }
+  
     .aside_hero{
       display: none;
     }
@@ -74,10 +83,13 @@ const GlobalStyle = createGlobalStyle`
       width: 400px;
       height: 1600px;
       top:-70px;
-      border-left: 1px solid red;
+      /* border-left: 1px solid red; */
       right: 0;
       bottom: 0;
-      opacity: 1;
+      /* display: none; */
+      opacity: 0;
+      z-index:-9999;
+         
       .side-sticky{
         position: relative;
       }

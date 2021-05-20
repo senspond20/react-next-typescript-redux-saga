@@ -71,3 +71,5 @@ export const wrapper = createWrapper<Store<State>>(makeStore, {debug: true});
 ref : https://github.com/kirill-konshin/next-redux-wrapper
 ref : https://jktech.tistory.com/47
 // https://simsimjae.medium.com/next-redux-wrapper%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0-5d0176209d14
+
+npm install redux react-redux

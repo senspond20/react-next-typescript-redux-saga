@@ -15,7 +15,7 @@ const GridWrap = styled.section`
     max-width: 1400px;
     display: grid;
     grid-auto-rows: minmax(100px, auto);
-    gap: .5em;
+    gap: 2.5em;
     grid-template-columns: 1fr 4fr 1fr;
 `;
 
@@ -24,10 +24,10 @@ const GridWrap = styled.section`
 const Article = styled.article`
     /* background-color: lightyellow; */
     background-color: rgba(0,0,0,0.009);
-    padding: 3em;
+    /* padding: 3em; */
     min-height: 960px;
     //border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
+    /* border-right: 1px solid #eee; */
     // ${commonStyle.border.boarderlic}; 
   //width: 960px;
 `
