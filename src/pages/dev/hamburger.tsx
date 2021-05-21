@@ -1,9 +1,10 @@
-import HamburgerButton from "@components/Atom/Buttons/HamburgerButton";
+// import HamburgerButton from "@components/Atom/Buttons/HamburgerButton";
+import MobileMenu from "@components/Molecules/Menu/MobileMenu";
 import React from "react";
 
 const handle = () =>{
     return(
-        <HamburgerButton/>
+        <MobileMenu/>
     )
 }
 export default handle;

@@ -9,8 +9,8 @@ const Wrapper = styled.div`
     input[id="hamberger-menu"] + label {
         position: relative;
         display: block;
-        width: 60px;
-        height: 40px;
+        width: 40px;
+        height: 30px;
         cursor: pointer;
     }
     input[id="hamberger-menu"] + label span {
@@ -53,7 +53,7 @@ export default function HamburgerButton(){
 
     return (
         <Wrapper onClick={onCilckHandler}>
-           <input type="checkbox" id="hamberger-menu" />
+            <input type="checkbox" id="hamberger-menu" />
             <label htmlFor="hamberger-menu">
                 <span></span>
                 <span></span>
