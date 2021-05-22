@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import CategoryMenu from "@components/Organisms/Menu/CategoryMenu";
+import {MenuItemType} from "@components/Atom/Items/MenuItem";
+import MenuList from "@components/Molecules/List/MenuList";
 
 const Container = styled.div`
     .background-wrap{
@@ -13,13 +14,20 @@ const Container = styled.div`
         z-index: 800; position: fixed; top:0; right: 0;
     }
 `;
+const list : MenuItemType[]= [
+    {link:"/web1", name:"web1"},
+    {link:"/web2", name:"web2"},
+    {link:"/web3", name:"web3"},
+    {link:"/web4", name:"web4"},
+]
+const MobileMenu = () =>(<MenuList list={list} className={'aside-menu'}/> )
 
-export default function MobileMenu(){
+export default function MobileSideBar(){
     return (
         <Container>
             <div className={'background-wrap'}></div>
             <div className='mobile-wrap'>
-                <CategoryMenu/>
+                <MobileMenu/>
             </div>
         </Container>
     )

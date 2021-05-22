@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import PostCard, {CardItem} from "@components/Organisms/Blog/PostCard";
+import PostCard, {CardItem} from "@components/Atom/Items/PostCard";
 
 const PostCardList = styled.div`
 `;

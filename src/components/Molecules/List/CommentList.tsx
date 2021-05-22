@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Comment, {CommentItem} from "@components/Organisms/Blog/Comment";
+import Comment, {CommentItem} from "@components/Atom/Items/Comment";
 import commonStyle from "@components/Templates/styles/Common";
-import ThisPlus from "@components/Organisms/Blog/ThisPlus";
+import ThisPlus from "@components/Atom/Items/ThisPlus";
 const Wrapper = styled.div`
   padding: 10px 10px;
   border-top: 1px solid #eee;

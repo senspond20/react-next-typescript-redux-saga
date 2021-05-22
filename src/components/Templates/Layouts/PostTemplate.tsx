@@ -3,8 +3,8 @@ import Layout from "@components/Templates/Layouts/MainTemplate"
 import BlogTemplate from "./BlogTemplate"
 import TocWrap from "@components/Templates/Layouts/TableOfContents"
 import SideBar from "@components/Templates/Layouts/SideBarTemplate"
-import NewComment from "@components/Organisms/Blog/NewComment";
-import CommentList from "@components/Organisms/Blog/CommentList";
+import NewComment from "@components/Atom/Items/NewComment";
+import CommentList from "@components/Molecules/List/CommentList";
 
 type Props = {
     children : ReactNode

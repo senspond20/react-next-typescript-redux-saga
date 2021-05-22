@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import common from "@components/Templates/styles/Common";
-import MobileMenu from "@components/Organisms/Menu/MobileMenu";
+import MobileMenu from "@components/Organisms/Menu/MobileSideBar";
 import HamburgerButton from "@components/Atom/Buttons/HamburgerButton";
 import {MenuItemType} from "@components/Atom/Items/MenuItem";
 import MenuList from "@components/Molecules/List/MenuList";
