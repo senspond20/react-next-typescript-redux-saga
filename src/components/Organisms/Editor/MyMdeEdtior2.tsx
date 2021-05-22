@@ -2,6 +2,7 @@ import React, {EventHandler, MouseEventHandler, useEffect, useRef, useState} fro
 import styled from "styled-components";
 import CustomMarkdownRenderer from "@components/Organisms/Renderder/CustomMarkdownRenderer";
 import ContentEditable from 'react-contenteditable'
+import ReactModal from "@components/Molecules/Modal/ReactModal";
 const Container = styled.div`
   @media screen and (max-width: 1080px){
     .sensingEditor .outputHtml{ display: none !important; }
@@ -13,9 +14,9 @@ const Container = styled.div`
   .sensingEditor .editor {background-color:#fff; border: 1px solid #f0f0f0; border-radius: 5px;}
   .sensingEditor .editor .writer{ white-space: pre-wrap; overflow-y: scroll; float: left; width: 100vw; height: 70vh; padding: 20px 20px; outline: none; }
   /* .sensingEditor .editor .textArea {  } */
-  .sensingEditor .toggle {float: right; cursor: pointer; background-color: #333; color: #fff; padding: 7px; border-radius: 10px;}
+  .sensingEditor .toggle {float: right; cursor: pointer; background-color: #333; padding: 7px; border-radius: 10px;}
   //.sensingEditor .editor .outputHtml { background-color: #fff; color:#333;}
-  .sensingEditor .outputHtml{  width: 100vw; height: 70vh; overflow-y: scroll;}
+  .sensingEditor .outputHtml{  width: 100vw; height: 70vh; background-color: #fefefe;overflow-y: scroll;}
   .sensingEditor .btn {display: flex; justify-content: center; align-items: center; width: 15vw; background-color: rgb(160, 150, 156); color:#fff; height: 40px; border-radius: 10px; cursor: pointer;}
   .sensingEditor .btn:hover { background-color: rgb(216, 210, 214);}
 
@@ -73,6 +74,11 @@ function DivEditor(){
         // e.stopImmediatePropagation();
 
         let vKey = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+        if(vKey  === 13){
+            console.log('render')
+            const ovalue2 : string = inputRef.current?.innerText || '';
+            setOutput(ovalue2);
+        }
         if(e.altKey){
             switch (vKey){
                 case 49 : console.log('h1'); // @ts-ignore
@@ -116,7 +122,7 @@ function DivEditor(){
         console.log(range)
 
         setInput(value)
-        setOutput(ovalue);
+        // setOutput(ovalue);
     }
     const codeInput = () =>{
 
@@ -161,8 +167,8 @@ function DivEditor(){
                     <button className="btn cancel">Cancel</button>
                     {/*<button onClick={()=>window.open('/')}>클릭</button>*/}
                 </div>
-                
             </form>
+            <ReactModal/>
         </Container>
     )
 }
