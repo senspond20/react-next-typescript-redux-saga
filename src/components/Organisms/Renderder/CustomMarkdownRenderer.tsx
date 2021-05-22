@@ -8,7 +8,6 @@ type Props ={
 }
 
 export default function createMarkup ( {content} : Props) {
-
     // @ts-ignore
     const html = {__html: createHighlightedCodeBlock(content, false) };
     return ( <MarkStyle dangerouslySetInnerHTML={html}/> )
