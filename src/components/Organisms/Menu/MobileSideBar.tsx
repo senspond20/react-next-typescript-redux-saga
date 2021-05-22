@@ -23,6 +23,7 @@ const list : MenuItemType[]= [
 const MobileMenu = () =>(<MenuList list={list} className={'aside-menu'}/> )
 
 export default function MobileSideBar(){
+
     return (
         <Container>
             <div className={'background-wrap'}></div>

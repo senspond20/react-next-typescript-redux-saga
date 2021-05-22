@@ -25,7 +25,6 @@ const HeaderWrapper = styled.header`
     right: 15px;
     opacity: 1;
     z-index: 9999;
-    
   }
   .header-nav {
     //background-color: #12212f;
@@ -128,3 +127,5 @@ function Header(){
     )
 }
 export default Header;
+
+
