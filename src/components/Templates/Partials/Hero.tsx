@@ -3,7 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import common from "@components/Templates/styles/Common";
 import MenuList from "@components/Molecules/List/MenuList";
-import {Item} from "@components/Atom/Items/MenuItem";
+import {MenuItemType} from "@components/Atom/Items/MenuItem";
 import TextLogo from "@components/Atom/Icon/TextLogo";
 
 const HeroWrapper = styled.header`
