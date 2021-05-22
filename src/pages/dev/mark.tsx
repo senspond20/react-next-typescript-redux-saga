@@ -1,5 +1,5 @@
 import React from "react";
-import CustomMarkRender from "components/Organisms/Renderder/CustomMarkdownRenderer";
+import CustomMarkRender from "@components/Organisms/Renderder/CustomMarkdownRendererV3";
 
 
 const CONTENT = `A paragraph with *emphasis* and **strong importance**.

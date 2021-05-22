@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     /** overflow : auto; -> 모달창 화면꽉차게 하려고 줬었지만 버그가 있다 */
     /* height: 100%; */
     /* overflow: auto; */
+    overflow: visible;
     color : ${({theme}) => theme.body.fgColor};
     background : ${({theme}) => theme.body.bgColor};
     font-size: 1.05em;
@@ -98,6 +99,18 @@ const GlobalStyle = createGlobalStyle`
   .blog-sidebar-ative{
 
   }
+  /* body 스크롤 방지용 */
+  //.stop-scroll{
+  //  //position: fixed;
+  //  overflow: hidden;
+  //  //width: 100%;
+  //  height: 100%
+  //}
+  //.visible{
+  //  visibility: visible;
+  //  opacity: 1;
+  //}
+  
 `;
 
 export default GlobalStyle;
