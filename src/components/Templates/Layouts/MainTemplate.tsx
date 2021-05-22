@@ -1,5 +1,5 @@
 import React from 'react';
-import {Hero,Header,Footer,SEO} from "@components/Templates/Partials";
+import {Hero,Header,Footer,SEO} from "@components/Organisms/Partials";
 import dynamic from "next/dynamic";
 const GoToTop = dynamic(() => import('@components/Atom/Buttons/GoToTop'), {ssr: false})
 import ThemeLayout from "@components/Templates/Layouts/ThemeLayout";
@@ -7,22 +7,24 @@ import styled from "styled-components";
 
 type Props ={
     title? : string
-    children? : React.ReactNode
+    children? : React.ReactNode,
+    useHero? : boolean
+    useHeader? : boolean,
 }
 
 const Content = styled.main`
   min-height: 980px;
 `;
 
-const MainTemplate = ({title, children} : Props) =>{
+const MainTemplate = (props : Props) =>{
     return(
         <ThemeLayout>
-            <SEO title={title}/>
-            <Hero/>
-            <Header/>
+            <SEO title={props.title}/>
+            {props.useHero || true ? <Hero/> : null}
+            {props.useHeader || true? <Header/> : null}
             <section>
                 <Content>
-                    {children}
+                    {props.children}
                 </Content>
             </section>
             <Footer/>
