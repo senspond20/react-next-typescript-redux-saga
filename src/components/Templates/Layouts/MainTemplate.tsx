@@ -16,7 +16,6 @@ const Content = styled.main`
 
 const MainTemplate = ({title, children} : Props) =>{
     return(
-        <div>
         <ThemeLayout>
             <SEO title={title}/>
             <Hero/>
@@ -29,8 +28,6 @@ const MainTemplate = ({title, children} : Props) =>{
             <Footer/>
             <GoToTop/>
         </ThemeLayout>
-        </div>
-
     )
 }
 

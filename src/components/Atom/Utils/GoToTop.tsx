@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react"
 import styled from "styled-components";
 import Common from "components/Templates/styles/Common";
+
 
 const TopBtn = styled.div`
   ${Common.nonSelect};
@@ -9,26 +10,38 @@ const TopBtn = styled.div`
   ${Common.flex.flexCenter};
   cursor: pointer;
 `;
-/**
- * 최상단으로 이동
- */
-
-const eventHandler = () =>{
-    console.log('Top')
-    // 바로
-    //window.scrollTo(0, 0)
-    // 부드럽게
-    window.scroll({
-        behavior:'smooth',
-        top : 0,
-        left : 0
-    })
-}
 
 function GoToTop(){
+    const [isVisible, setIsVisible] = useState(false);
+    /**
+     * 최상단으로 이동
+     */
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
 
+    useEffect(() => {
+        const toggleVisibility = () => {
+            if (window.pageYOffset > 500) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+        window.addEventListener("scroll", toggleVisibility);
+
+        return () => window.removeEventListener("scroll", toggleVisibility);
+    }, []);
     return(
-        <TopBtn onClick={eventHandler}>Top</TopBtn>
+        <>
+        {isVisible
+        ? <TopBtn onClick={scrollToTop}>Top</TopBtn>
+        : <></>
+        }
+        </>
     )
 }
 export default GoToTop;
