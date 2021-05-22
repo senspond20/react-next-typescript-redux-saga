@@ -5,13 +5,14 @@ import styled from "styled-components";
 const Item = styled.li`
     
 `;
-export type Item ={
+export type MenuItemType ={
     link : string,
     name : string,
     className? : string
 }
-const MenuItem = (prop : Item) =>{
+const MenuItemOne = (prop : MenuItemType) =>{
     return (<Item className={prop.className}><Link href={prop.link}><a>{prop.name}</a></Link></Item>);
 };
 
-export default MenuItem;
+export default MenuItemOne;
+// export MenuItemOne;

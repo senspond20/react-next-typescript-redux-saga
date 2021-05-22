@@ -1,21 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import MenuItem,{Item} from "./MenuItem";
+import MenuItemOne, { MenuItemType} from "../../Atom/Items/MenuItem";
 
 const MenuList = styled.ul`
 `;
 
 type Props = {
     className? : string
-    list : Item[]
+    list : MenuItemType[]
 }
-const handle = (props : Props) =>{
-    // console.log(props.list)
-    return(
 
+const handle = (props : Props) =>{
+    return(
         <MenuList className={props.className}>
             {props.list.map((e, idx) =>{
-                return (<MenuItem key ={idx} className={e.className} name={e.name} link={e.link}/>)
+                return (<MenuItemOne key ={idx} className={e.className} name={e.name} link={e.link}/>)
             })}
         </MenuList>
     )

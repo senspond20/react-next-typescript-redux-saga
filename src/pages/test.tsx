@@ -1,5 +1,5 @@
 import React from "react";
-import GoToTop from "@components/Atom/Utils/GoToTop";
+import GoToTop from "@components/Atom/Buttons/GoToTop";
 
 
 const Testtt = () =>{

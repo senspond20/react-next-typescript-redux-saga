@@ -1,7 +1,7 @@
 import React from 'react';
 import {Hero,Header,Footer,SEO} from "@components/Templates/Partials";
 import dynamic from "next/dynamic";
-const GoToTop = dynamic(() => import('components/Atom/Utils/GoToTop'), {ssr: false})
+const GoToTop = dynamic(() => import('@components/Atom/Buttons/GoToTop'), {ssr: false})
 import ThemeLayout from "@components/Templates/Layouts/ThemeLayout";
 import styled from "styled-components";
 

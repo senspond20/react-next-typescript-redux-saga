@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import {getCategorySampleData} from "../repository/category";
 import styled from "styled-components";
-import {getTree, MultiTable} from "components/Atom/Utils/MultiTable";
-import MultiNode from "components/Atom/Utils/MultiNode";
+import {getTree, MultiTable} from "components/Atom/Items/MultiTable";
+import MultiNode from "components/Atom/Items/MultiNode";
 import {GetServerSideProps, GetStaticProps} from "next";
 import axios from "axios";
 
