@@ -56,12 +56,12 @@ const MarkStyle = styled.div`
   }
 
   td.line-number {
-    display: inline-block;
+    //display: inline-block;
     text-align: center;
     color: #ccc;
     border-right: 1px solid #999;
     vertical-align: top;
-    padding-right: 5px;
+    //padding-right: 5px;
     ${nonSelect}
   }
 

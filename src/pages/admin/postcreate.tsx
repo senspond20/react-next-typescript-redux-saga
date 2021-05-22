@@ -1,8 +1,11 @@
 import React from "react";
+import SimpleMdeReactEditor from "@components/Organisms/Editor/SimpleMdeReact";
 
 const PostCreatePage = () =>{
     return (
-        <div></div>
+        <div>
+            <SimpleMdeReactEditor/>
+        </div>
     )
 }
 
