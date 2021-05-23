@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {AppProps} from 'next/app';
 import {CookiesProvider} from "react-cookie";
 import '../components/Organisms/Partials/hero.scss'
+import 'components/Organisms/Editor/style.css'
+
 // @ts-ignore
 function SafeHydrate({ children }) {
     return (

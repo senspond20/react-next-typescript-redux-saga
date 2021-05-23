@@ -1,6 +1,45 @@
+import React, {useEffect} from "react";
 import styled from "styled-components";
-import {HiOutlineClipboardCopy} from "react-icons/hi";
-import {AiOutlineCloseCircle} from "react-icons/ai";
+
+type Props = {
+    isOpen : boolean;
+    content : string
+}
+export default function ClipModal(props : Props){
+    const doCopy = (value : string) =>{
+
+        if (!document.queryCommandSupported("copy")) {
+            return alert("복사하기가 지원되지 않는 브라우저입니다.");
+        }
+        const textarea = document.createElement("textarea");
+        if (textarea) {
+            textarea.value = value;
+            textarea.style.top = String(0);
+            textarea.style.left = String(0);
+            textarea.style.display = "fixed";
+        }
+        document.body.appendChild(textarea);
+        textarea.focus();   // focus() -> 사파리 브라우저 서포팅
+        textarea.select();  // select() -> 사용자가 입력한 내용을 영역을 설정할 때 필요
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+    }
+    useEffect(()=>{
+
+        if(props.isOpen) { // modal 창을 열였을때 실행
+            //doCopy(props.content)
+        }
+
+    },[])
+
+    return(
+        <ModalWrapper>
+            <div>
+
+            </div>
+        </ModalWrapper>
+    )
+}
 
 const nonSelect = {
     '-webkit-touch-callout': 'none',
@@ -12,18 +51,14 @@ const nonSelect = {
 }
 
 const ModalWrapper = styled.div`
-
   .modal-wrapper {
     background: rgba(0, 0, 0, 0.16);
     position: absolute;
     left: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
-    //height: 100vh;
-    opacity: 1;
-    transition: all 0.5s;
-    z-index: 9999;
+    bottom: 0;
+    top: 0;
+    height: 100vh;
     ${nonSelect};
   }
 
@@ -32,14 +67,14 @@ const ModalWrapper = styled.div`
     background: #fefdfe;
     border-radius: 10px;
     //margin: 0 auto;
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -80%);
     box-shadow: 12px 12px 2px 1px rgba(18, 71, 190, 0.4);
     //box-shadow: 12px 12px 2px 1px rgba(23, 158, 229, 0.4);
     //box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-    width: 340px;
+    width: 320px;
     height: 110px;
     //min-width: 100px;
     text-align: center;
@@ -88,23 +123,4 @@ const ClickWrapper = styled.div`
     color: ${(props : any) => props.hoverColor || '#0070f3'};
   }
 `
-const ClickIcon = styled(HiOutlineClipboardCopy)`
-  font-size: 20px;
-`
-const CloseIcon = styled(AiOutlineCloseCircle)`
-  cursor: pointer;
-  font-size: 35px;
-  color: rgba(23, 158, 229, 0.4);
 
-  :hover {
-    color: rgba(23, 158, 229, 0.8);
-    //color: rgba(138, 15, 223, 0.8);
-  }
-`;
-
-export {
-    CloseIcon,
-    ClickIcon,
-    ClickWrapper,
-    ModalWrapper
-}
