@@ -18,15 +18,14 @@ const Wrapper = styled.div`
   border-radius: 5px;
   //grid-column: 1 / 4;
   width: 100%;
-
 `;
 
 const GridWrap = styled.section`
-    //width: 1450px;
-    display: grid;
-    grid-auto-rows: minmax(100px, auto);
-    gap: .5em;
-    grid-template-columns: 1fr 4fr 1fr;
+  //width: 1450px;
+  display: grid;
+  grid-auto-rows: minmax(100px, auto);
+  gap: .5em;
+  grid-template-columns: 1fr 4fr 1fr;
 `;
 const Main = styled.main`
   display: flex;
@@ -36,9 +35,7 @@ const Main = styled.main`
   max-width: 960px;
   margin-top: 3rem;
   .post-card{
-
   }
-
 `;
 const Card = styled.div`
   margin: 1rem;
@@ -58,7 +55,6 @@ const Card = styled.div`
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-
   :hover, :focus, :active {
     color: #35acd7;
     border-color: #35acd7;
