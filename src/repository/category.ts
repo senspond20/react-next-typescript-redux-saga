@@ -1,4 +1,4 @@
-import {MultiTable} from "../utils/MultiTable";
+import {MultiTable} from "components/Atom/Items/MultiTable";
 
 
 export const categoryList =

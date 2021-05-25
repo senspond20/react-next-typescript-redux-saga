@@ -1,11 +1,11 @@
 import React from "react";
-import Layout from "@components/Layouts"
+import Layout from "@components/Templates/Layouts/MainTemplate"
 import styled from "styled-components";
-import BlogTemplate from "@components/Blog/BlogTemplate";
-import TocWrap from "@components/Blog/TableOfContents";
-import SideBar from "@components/Blog/SideBar";
-import PostCard, {CardItem} from "@components/Blog/PostCard";
-import PostCardList from "@components/Blog/PostCardList";
+import BlogTemplate from "@components/Templates/Layouts/BlogTemplate";
+import TocWrap from "@components/Templates/Layouts/TableOfContents";
+import SideBar from "@components/Organisms/Partials/Aside";
+import PostCard, {CardItem} from "@components/Atom/Items/PostCard";
+import PostCardList from "@components/Molecules/List/PostCardList";
 const Wrapper = styled.div`
   flex: 1;
   display: flex;
@@ -107,9 +107,9 @@ const handle = () =>{
                         <PostCardList list={postCardList} className={'post-card'}/>
                     </Main>
                 </Wrapper>
-
             </BlogTemplate>
         </Layout>
     )
 }
 export default handle;
+

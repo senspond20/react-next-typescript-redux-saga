@@ -1,12 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {AppProps} from 'next/app';
-import {wrapper} from '@stores/index';
-import Seo from '@components/Seo'
-import Layout from "@components/Layouts";
-import withReduxSaga from 'next-redux-saga'
-import {Provider} from "react-redux";
-import 'codemirror/lib/codemirror.css';
-import '@toast-ui/editor/dist/toastui-editor.css';
+import {CookiesProvider} from "react-cookie";
+import '../components/Organisms/Partials/hero.scss'
+import 'components/Organisms/Editor/style.css'
+
 // @ts-ignore
 function SafeHydrate({ children }) {
     return (
@@ -15,37 +12,32 @@ function SafeHydrate({ children }) {
         </div>
     )
 }
-// let restore;
-function WrappedApp ({
-     Component,
-     pageProps
-} : AppProps) : JSX.Element{
+function WrappedApp ({Component, pageProps } : AppProps) : JSX.Element{
+
+    const [isLoading, setLoading] = useState(false)
+    useEffect(()=>{
+        setLoading(true);
+    })
+    const visibleStyle = {
+        display: '',
+        transition: 'display 3s',
+    };
+    const inVisibleStyle = {
+        display: 'none',
+        transition: 'display 3s',
+    };
     return (
-        // <Provider store={restore}>
-        //     <Layout>
-               // {/*<Seo/>*/}
         <SafeHydrate>
-            <Seo/>
-            <Component {...pageProps} />
+            <CookiesProvider>
+                <span style={!isLoading ? inVisibleStyle : visibleStyle}>
+                <Component {...pageProps} />
+            </span>
+            </CookiesProvider>
         </SafeHydrate>
-            // </Layout>
-        // </Provider>
+
     )
 }
-WrappedApp.getInitialProps = async (context: { Component: any; ctx: any; }) =>{
-    const { Component, ctx } = context;
-    const { store, isServer } = ctx; //
-    // restore = store;
-    console.log((store))
-    console.log(isServer)
-    const pageProps = (await Component.getInitialProps?.(ctx)) || {};
 
-    return {pageProps}
-}
-
-//export default wrapper.withRedux(WrappedApp);
- export default wrapper.withRedux(withReduxSaga(WrappedApp));
+export default WrappedApp;
 
 
-// withReduxSaga
-//https://github.com/bmealhouse/next-redux-saga

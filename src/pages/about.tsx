@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "@components/Layouts"
+import Layout from "@components/Templates/Layouts/MainTemplate"
 import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
@@ -31,16 +31,17 @@ const handle = () =>{
                             <h3>사용기술</h3>
                             <ul>프론트엔드
                                 <li>Http/CSS/TypeScript(Javascript)</li>
-                                <li>Next(width . React/Redux/Saga)</li>
+                                <li>Next(with . React/Redux/Saga)</li>
                             </ul>
                             <ul>백엔드
-                                <li>Http/CSS/TypeScript(Javascript)</li>
-                                <li>Next(width . React/Redux/Saga)</li>
+                                <li>NodeJs/Typescript</li>
+                                <li>Express Framework</li>
+                                <li>Mariadb</li>
                             </ul>
                             <ul>
                                 서버환경
-                                <li>Http/CSS/TypeScript(Javascript)</li>
-                                <li>Next(width . React/Redux/Saga)</li>
+                                <li>Nginx</li>
+                                <li></li>
                             </ul>
                         </div>
                     </article>
