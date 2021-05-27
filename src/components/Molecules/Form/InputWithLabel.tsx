@@ -1,5 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import InputV1 from "@components/Atom/Input/InputV1";
+import LabelV1 from "@components/Atom/Label/LabelV1";
+
+interface Props  extends React.ComponentPropsWithoutRef<"input">{
+    className? : string
+    label : string,
+};
+
+export default function InputWithLabel(props : Props) : JSX.Element{
+    const {className,label, ...rest} = props;
+    return (
+        <Wrapper className={className}>
+            <LabelV1>{label}</LabelV1><InputV1 type={'text'} {...rest}/>
+        </Wrapper>
+    )
+};
+
 
 const Wrapper = styled.div`
   "& + &": {
@@ -21,18 +38,3 @@ const Wrapper = styled.div`
     paddingRight: 0.5rem;
   }
 `
-type Props ={
-    className? : string
-    label : string,
-    rest? : any
-}
-const handle = ({className,label,...rest} : Props) : JSX.Element=>{
-    return (
-        <Wrapper className={className}>
-            <label>{label}</label><input type={'text'} {...rest}/>
-        </Wrapper>
-
-    )
-
-}
-export default handle;

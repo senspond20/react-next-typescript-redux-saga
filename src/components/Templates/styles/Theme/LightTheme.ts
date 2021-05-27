@@ -12,5 +12,13 @@ export const lightTheme : DefaultTheme ={
     header : {},
     main : {},
     footer : {},
-    button : {}
+    button : {},
+    item : {
+        label : '#5264AE',
+        button : '#5264AE',
+        bar : '#5264AE'
+    },
+    green : '#4CAF50',
+    greenActive : '#4CAF50',
+    blue  : '#5264AE'
 }
