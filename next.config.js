@@ -24,26 +24,12 @@ const nextConfig = {
 module.exports = withPlugins([
     [css],
     [sass, {
-        cssModules: true
+        cssModules: true,
+        output: {
+            globalObject: 'this'
+        },
+        env: {
+            VERSION : process.env.REACT_APP_SERVICE_VERSION,
+        }
     }]
 ], nextConfig)
-
-module.exports = {
-    output: {
-        globalObject: 'this'
-    },
-    env: {
-        VERSION : process.env.REACT_APP_SERVICE_VERSION,
-    }
-}
-
-// module.exports = withPlugins([
-//     [
-//         withTM,
-//         {
-//             transpileModules: [
-//                 "react-syntax-highlighter",
-//             ]
-//         }
-//     ],
-// ])
