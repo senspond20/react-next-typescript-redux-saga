@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import  commonStyle  from '@components/Layouts/commonStyle';
-=======
 import commonStyle  from 'components/Templates/styles/Common';
->>>>>>> 324062b6e55e7320e8ba8ee459cc9621dffa8dc6
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
